@@ -6,11 +6,12 @@ use App\Http\Controllers\CitizenAccountController;
 use App\Http\Controllers\PartnerPortalController;
 use App\Http\Controllers\PartnerVerificationController;
 use App\Http\Controllers\RegisteredCitizenController;
+use App\Http\Controllers\Public\DiscoveryController;
 use Illuminate\Support\Facades\Route;
 
 // Publik: kategori dan profil jasa dummy tetap dapat diakses oleh siapa pun.
-Route::view('/', 'home.index')->name('home');
-Route::view('/kategori-jasa', 'categories.index')->name('categories.index');
+Route::get('/', [DiscoveryController::class, 'home'])->name('home');
+Route::get('/kategori-jasa', [DiscoveryController::class, 'index'])->name('categories.index');
 
 Route::get('/masuk', [AuthController::class, 'showLogin'])->name('account.login');
 Route::post('/masuk', [AuthController::class, 'login'])->middleware('throttle:6,1')->name('auth.login');
@@ -86,13 +87,16 @@ Route::get('/admin/dashboard', function () {
 
 // Admin Manajemen Warga dan Mitra: UI legacy localStorage, akses role Admin.
 Route::view('/admin/warga', 'admin.citizens.index')->name('admin.citizens');
-Route::get('/admin/mitra', function () {
-    return view('admin.partners.index', [
+// Ini daftar Mitra PostgreSQL: termasuk yang sudah disetujui.
+Route::get('/admin/mitra', [PartnerVerificationController::class, 'index'])->name('admin.partners');
+// Katalog demo lama tetap dapat diakses terpisah bila dibutuhkan saat presentasi.
+Route::get('/admin/mitra-demo', function () {
+    return view('admin.partners.demo', [
         'providers' => config('jasawarga.providers', []),
         'profiles' => config('jasawarga_profiles', []),
         'categories' => config('jasawarga.categories', []),
     ]);
-})->name('admin.partners');
+})->name('admin.partners.demo');
 
 // Modul operasional Admin: CRUD simulasi localStorage, route butuh login Admin.
 Route::get('/admin/kategori', function () {

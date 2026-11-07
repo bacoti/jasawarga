@@ -3,17 +3,18 @@
     $jwCitizen = $jwRole === 'citizen';
     $jwPartner = $jwRole === 'partner';
     $jwAdmin = $jwRole === 'admin';
+    $jwDashboardHref = auth()->check() ? \App\Http\Controllers\AuthController::destination(auth()->user()) : route('home');
     $jwNavLinks = [
         ['text' => 'Beranda', 'href' => route('home'), 'active' => request()->routeIs('home'), 'icon' => 'home'],
         ['text' => 'Kategori Jasa', 'href' => route('categories.index'), 'active' => request()->routeIs('categories.*', 'providers.show', 'bookings.*'), 'icon' => 'grid_view'],
     ];
     if ($jwCitizen) {
         $jwNavLinks[] = ['text' => 'Pesanan Saya', 'href' => route('account.bookings.index'), 'active' => request()->routeIs('account.bookings.*', 'orders.*'), 'icon' => 'receipt_long'];
-        $jwNavLinks[] = ['text' => 'Akun Saya', 'href' => route('account.profile.show'), 'active' => request()->routeIs('account.*'), 'icon' => 'person'];
+        $jwNavLinks[] = ['text' => 'Dashboard Saya', 'href' => $jwDashboardHref, 'active' => request()->routeIs('account.analytics.dashboard'), 'icon' => 'space_dashboard'];
     } elseif ($jwPartner) {
-        $jwNavLinks[] = ['text' => 'Ruang Mitra', 'href' => route('partner.portal'), 'active' => request()->is('mitra/*'), 'icon' => 'handyman'];
+        $jwNavLinks[] = ['text' => 'Dashboard Mitra', 'href' => $jwDashboardHref, 'active' => request()->is('mitra/*'), 'icon' => 'handyman'];
     } elseif ($jwAdmin) {
-        $jwNavLinks[] = ['text' => 'Dashboard Admin', 'href' => route('admin.analytics.dashboard'), 'active' => request()->is('admin/*'), 'icon' => 'shield_person'];
+        $jwNavLinks[] = ['text' => 'Dashboard Admin', 'href' => $jwDashboardHref, 'active' => request()->is('admin/*'), 'icon' => 'shield_person'];
     } else {
         $jwNavLinks[] = ['text' => 'Masuk', 'href' => route('account.login'), 'active' => request()->routeIs('account.login'), 'icon' => 'login'];
         $jwNavLinks[] = ['text' => 'Daftar', 'href' => route('account.register'), 'active' => request()->routeIs('account.register'), 'icon' => 'person_add'];
@@ -33,7 +34,7 @@
         <div class="flex shrink-0 items-center gap-2">
             <span class="hidden items-center gap-1 rounded-full border border-[#e1e8f0] bg-slate-50 px-3 py-2 text-[11px] font-semibold text-slate-600 sm:inline-flex"><span class="material-symbols-outlined text-[16px] text-[#0C3065]">location_on</span> Bandung, Jawa Barat</span>
             @auth
-                <a href="{{ $jwCitizen ? route('account.profile.show') : ($jwPartner ? route('partner.portal') : route('admin.analytics.dashboard')) }}" class="flex max-w-[150px] items-center gap-2 rounded-xl border border-[#e1e8f0] bg-white px-2.5 py-2 text-xs font-bold text-[#0C3065] hover:bg-[#EBF4FF]" aria-label="Buka akun {{ auth()->user()->role }}"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#E8F4FE] text-[10px]">{{ strtoupper(mb_substr(auth()->user()->name,0,1)) }}</span><span class="hidden truncate sm:inline">{{ auth()->user()->name }}</span></a>
+                <a href="{{ $jwDashboardHref }}" class="flex max-w-[150px] items-center gap-2 rounded-xl border border-[#e1e8f0] bg-white px-2.5 py-2 text-xs font-bold text-[#0C3065] hover:bg-[#EBF4FF]" aria-label="Buka akun {{ auth()->user()->role }}"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#E8F4FE] text-[10px]">{{ strtoupper(mb_substr(auth()->user()->name,0,1)) }}</span><span class="hidden truncate sm:inline">{{ auth()->user()->name }}</span></a>
             @endauth
         </div>
     </div>

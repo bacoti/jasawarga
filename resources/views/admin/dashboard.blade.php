@@ -26,7 +26,7 @@
                             <button class="font-bold text-primary" type="submit" aria-label="Cari pesanan"><span class="material-symbols-outlined text-[19px]">arrow_forward</span></button>
                         </form>
                         <button type="button" data-admin-refresh aria-label="Perbarui data dashboard" title="Perbarui dari browser" class="flex h-10 w-10 items-center justify-center rounded-xl border border-outline-variant/50 bg-white text-on-surface-variant hover:bg-surface-container-low"><span class="material-symbols-outlined text-[21px]">refresh</span></button>
-                        <a href="{{ route('partner.dashboard') }}" class="hidden rounded-xl border border-outline-variant/60 px-3 py-2.5 text-xs font-bold text-on-surface-variant hover:bg-surface-container-low sm:inline-flex">Mode Mitra</a>
+                        <span class="hidden max-w-[210px] truncate text-xs font-semibold text-on-surface-variant sm:inline" title="Admin aktif">{{ auth()->user()?->name }}</span>
                         <span title="Admin terautentikasi; data dashboard masih demo" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-fixed text-sm font-extrabold text-primary">AD</span>
                     </div>
                 </div>

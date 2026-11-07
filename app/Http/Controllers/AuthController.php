@@ -17,11 +17,26 @@ class AuthController extends Controller
 {
     public static function destination(User $user): string
     {
-        return match ($user->role) {
-            User::ROLE_ADMIN => route('admin.dashboard'),
-            User::ROLE_PARTNER => route('partner.portal'),
-            default => route('account.profile'),
-        };
+        // Admin memakai panel biru navy yang dipakai seluruh halaman Admin lama.
+        // Dashboard Mitra demo hanya aman untuk akun seed yang memang memiliki katalog #1.
+        // Mitra PostgreSQL lainnya harus memakai dashboard dengan data miliknya sendiri.
+        if ($user->role === User::ROLE_ADMIN) {
+            return route('admin.dashboard');
+        }
+
+        if ($user->role === User::ROLE_PARTNER) {
+            $partner = $user->partnerProfile;
+            if ($partner && (int) $partner->demo_provider_id === 1
+                && $partner->verification_status === 'approved'
+                && ! $partner->reverification_required) {
+                return route('partner.dashboard');
+            }
+            return route('partner.analytics.dashboard');
+        }
+
+        return $user->role === User::ROLE_CITIZEN
+            ? route('account.analytics.dashboard')
+            : route('home');
     }
 
     public function showLogin(Request $request): View|RedirectResponse
@@ -48,7 +63,15 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        return redirect(self::destination($request->user()));
+        $user = $request->user();
+        $roleName = match ($user->role) {
+            User::ROLE_ADMIN => 'Admin',
+            User::ROLE_PARTNER => 'Mitra',
+            default => 'Warga',
+        };
+
+        return redirect(self::destination($user))
+            ->with('success', "Anda berhasil login sebagai {$roleName}.");
     }
 
     public function showCitizenRegister(): View|RedirectResponse
@@ -70,7 +93,8 @@ class AuthController extends Controller
         ]);
         Auth::login($user);
         $request->session()->regenerate();
-        return redirect()->route('account.profile')->with('success', 'Akun Warga berhasil dibuat.');
+        return redirect(self::destination($user))
+            ->with('success', 'Akun Warga berhasil dibuat. Selamat datang di JasaWarga!');
     }
 
     public function showPartnerRegister(): View|RedirectResponse
@@ -93,6 +117,8 @@ class AuthController extends Controller
             ]);
             PartnerProfile::create([
                 'user_id' => $user->id,
+                'slug' => (\Illuminate\Support\Str::slug(trim($data['business_name'])) ?: 'mitra').'-'.$user->id,
+                'city' => 'Bandung',
                 'business_name' => trim($data['business_name']),
                 'business_phone' => $data['business_phone'],
                 'service_area' => trim($data['service_area']),
@@ -104,7 +130,8 @@ class AuthController extends Controller
         });
         Auth::login($user);
         $request->session()->regenerate();
-        return redirect()->route('partner.portal')->with('success', 'Pendaftaran Mitra diterima. Menunggu review Admin.');
+        return redirect(self::destination($user))
+            ->with('success', 'Akun Mitra berhasil dibuat. Pengajuan menunggu verifikasi Admin.');
     }
 
     public function logout(Request $request): RedirectResponse

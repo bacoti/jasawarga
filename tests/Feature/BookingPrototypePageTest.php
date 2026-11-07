@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class BookingPrototypePageTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_each_demo_provider_has_booking_form(): void
     {
         foreach (config('jasawarga.providers') as $provider) {

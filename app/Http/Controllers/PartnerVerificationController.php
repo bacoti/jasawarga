@@ -11,14 +11,39 @@ use Illuminate\View\View;
 
 class PartnerVerificationController extends Controller
 {
-    public function index(): View
+    public function index(\Illuminate\Http\Request $request): View
     {
-        return view('auth.admin-partner-applications', [
-            'applications' => PartnerProfile::with('user')
-                ->whereNull('demo_provider_id')
-                ->orderByRaw("CASE verification_status WHEN 'pending' THEN 0 WHEN 'rejected' THEN 1 ELSE 2 END")
-                ->latest()->paginate(15),
-        ]);
+        $search = mb_substr(trim((string) $request->query('q', '')), 0, 100);
+        $status = (string) $request->query('status', 'all');
+        if (! in_array($status, ['all', 'pending', 'approved', 'rejected', 'reverification'], true)) {
+            $status = 'all';
+        }
+
+        $query = PartnerProfile::query()->whereNull('demo_provider_id');
+        $stats = [
+            'all' => (clone $query)->count(),
+            'approved' => (clone $query)->where('verification_status', 'approved')->where('reverification_required', false)->count(),
+            'pending' => (clone $query)->where('verification_status', 'pending')->count(),
+            'rejected' => (clone $query)->where('verification_status', 'rejected')->count(),
+            'reverification' => (clone $query)->where('reverification_required', true)->count(),
+        ];
+        $applications = $query->with('user')
+            ->withCount(['services as published_services_count' => fn ($q) => $q->published()])
+            ->when($search !== '', function ($q) use ($search) {
+                $term = '%'.mb_strtolower($search).'%';
+                $q->where(fn ($p) => $p->whereRaw('LOWER(business_name) LIKE ?', [$term])
+                    ->orWhereRaw('LOWER(service_area) LIKE ?', [$term])
+                    ->orWhereHas('user', fn ($u) => $u->whereRaw('LOWER(name) LIKE ?', [$term])
+                        ->orWhereRaw('LOWER(email) LIKE ?', [$term])));
+            })
+            ->when($status === 'approved', fn ($q) => $q->where('verification_status', 'approved')->where('reverification_required', false))
+            ->when($status === 'pending', fn ($q) => $q->where('verification_status', 'pending'))
+            ->when($status === 'rejected', fn ($q) => $q->where('verification_status', 'rejected'))
+            ->when($status === 'reverification', fn ($q) => $q->where('reverification_required', true))
+            ->orderByRaw("CASE verification_status WHEN 'pending' THEN 0 WHEN 'approved' THEN 1 ELSE 2 END")
+            ->latest('id')->paginate(12)->withQueryString();
+
+        return view('admin.partners.index', compact('applications', 'search', 'status', 'stats'));
     }
 
     public function decide(PartnerDecisionRequest $request, PartnerProfile $partnerProfile): RedirectResponse

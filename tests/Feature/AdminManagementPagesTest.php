@@ -3,10 +3,13 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class AdminManagementPagesTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,14 +31,16 @@ class AdminManagementPagesTest extends TestCase
             ->assertSee(route('admin.partners'));
     }
 
-    public function test_admin_mitra_page_has_seed_and_simulation_disclaimer(): void
+    public function test_admin_mitra_page_uses_database_and_keeps_demo_separate(): void
     {
         $this->get(route('admin.partners'))
             ->assertOk()
             ->assertSee('Manajemen Mitra & Verifikasi', false)
+            ->assertSee('Akun Mitra · PostgreSQL');
+        $this->get(route('admin.partners.demo'))
+            ->assertOk()
             ->assertSee('Budi Teknik')
-            ->assertSee('data-partner-action-form', false)
-            ->assertSee('Verifikasi simulasi');
+            ->assertSee('data-partner-action-form', false);
     }
 
     public function test_no_post_endpoints_for_prototype_admin(): void

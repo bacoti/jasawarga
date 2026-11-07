@@ -39,7 +39,7 @@ class AuthPostgresFoundationTest extends TestCase
             'password' => 'SecurePass2026',
             'password_confirmation' => 'SecurePass2026',
             'terms' => '1',
-        ])->assertRedirect('/akun');
+        ])->assertRedirect(route('account.analytics.dashboard'))->assertSessionHas('success');
         $this->assertDatabaseHas('users', ['email' => 'siti@example.test', 'role' => 'citizen']);
         $citizen = User::where('email', 'siti@example.test')->firstOrFail();
         $this->assertTrue(Hash::check('SecurePass2026', $citizen->password));
@@ -55,7 +55,7 @@ class AuthPostgresFoundationTest extends TestCase
             'service_area' => 'Panakkukang', 'description' => 'Instalasi listrik rumah',
             'password' => 'SecurePass2026', 'password_confirmation' => 'SecurePass2026',
             'terms' => '1',
-        ])->assertRedirect('/mitra/portal');
+        ])->assertRedirect(route('partner.analytics.dashboard'))->assertSessionHas('success');
         $user = User::where('email', 'rani@example.test')->firstOrFail();
         $this->assertSame('pending', $user->partnerProfile->verification_status);
         $this->assertNull($user->partnerProfile->demo_provider_id);
@@ -92,7 +92,7 @@ class AuthPostgresFoundationTest extends TestCase
         $this->assertGuest();
         $this->post('/masuk', [
             'email'=>$citizen->email, 'password'=>'StrongPass2026!', 'role'=>'citizen',
-        ])->assertRedirect('/akun');
+        ])->assertRedirect(route('account.analytics.dashboard'))->assertSessionHas('success');
         $this->post('/keluar')->assertRedirect('/masuk');
         $this->assertGuest();
     }

@@ -53,9 +53,6 @@
             </nav>
         </header>
         <main class="mx-auto max-w-7xl px-4 pb-20 pt-7 sm:px-7 lg:px-10 lg:pb-16 lg:pt-10">
-            @if(session('success'))
-                <p role="status" class="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800">{{ session('success') }}</p>
-            @endif
             @if($errors->any())
                 <div role="alert" class="mb-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
                     <strong>Periksa kembali input:</strong><ul class="mt-2 list-inside list-disc">@foreach($errors->all() as $message)<li>{{ $message }}</li>@endforeach</ul>

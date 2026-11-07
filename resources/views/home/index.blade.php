@@ -8,12 +8,14 @@
         <div class="relative mx-auto flex min-h-screen w-full max-w-[480px] flex-col border-x border-outline-variant/30 bg-background pb-28 shadow-2xl">
             @include('home.mobile.header')
             @include('home.mobile.content')
+            @include('home.partials.live-partners', ['variant' => 'mobile'])
             @include('home.mobile.bottom-nav')
         </div>
     </div>
 
     <div class="jw-experience jw-desktop hidden min-h-screen flex-col bg-surface text-on-surface lg:flex">
         @include('home.desktop.header')
+        @include('home.partials.live-partners', ['variant' => 'desktop'])
         @include('home.desktop.content')
         @include('home.desktop.footer')
     </div>

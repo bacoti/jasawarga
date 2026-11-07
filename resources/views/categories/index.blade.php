@@ -34,7 +34,21 @@
             </div>
         </section>
 
-        <div class="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900"><span><strong>Katalog layanan database sudah tersedia.</strong> Lihat layanan dari Mitra terverifikasi yang telah diterbitkan di PostgreSQL.</span><a class="shrink-0 rounded-lg bg-[#006098] px-4 py-2 text-xs font-bold text-white" href="{{ route('db-catalog.index') }}">Buka Katalog Database →</a></div>
+        {{-- Daftar utama Mitra nyata dari PostgreSQL; tidak dicampur dengan 8 kartu katalog demo. --}}
+        <section id="mitra-postgresql" class="mb-8 scroll-mt-28 rounded-2xl border border-blue-200 bg-[#F0F7FD] p-4 sm:p-6" aria-labelledby="jw-db-partners-heading">
+            <div class="flex flex-wrap items-end justify-between gap-3"><div><p class="text-[10px] font-bold uppercase tracking-[.15em] text-primary">Data akun dan layanan PostgreSQL</p><h2 id="jw-db-partners-heading" class="mt-1 text-xl font-extrabold text-[#142B42] sm:text-2xl">Mitra terverifikasi & layanan aktif</h2><p class="mt-1 text-xs text-slate-600">Termasuk Mitra yang baru disetujui Admin. Tarif diperbarui dari akun Mitra yang sedang aktif.</p></div><span class="rounded-full bg-white px-3 py-2 text-xs font-bold text-primary">{{ $livePartners->total() }} Mitra ditemukan</span></div>
+            <form action="{{ route('categories.index') }}#mitra-postgresql" method="GET" role="search" class="mt-5 grid gap-2 sm:grid-cols-[1fr_200px_auto]">
+                <label for="jw-db-q" class="sr-only">Cari Mitra dan layanan PostgreSQL</label><input id="jw-db-q" type="search" name="db_q" maxlength="100" value="{{ $dbSearch }}" placeholder="Cari nama Mitra, layanan atau kecamatan..." class="w-full min-w-0 rounded-xl border-slate-300 bg-white text-sm">
+                <label for="jw-db-category" class="sr-only">Kategori layanan PostgreSQL</label><select id="jw-db-category" name="db_category" class="rounded-xl border-slate-300 bg-white text-sm"><option value="">Semua kategori jasa</option>@foreach($dbCategories as $dbCat)<option value="{{ $dbCat->slug }}" @selected($dbCategory === $dbCat->slug)>{{ $dbCat->name }}</option>@endforeach</select>
+                <button class="rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white">Cari</button>
+            </form>
+            <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                @forelse($livePartners as $partner)@include('components.live-partner-card', ['partner' => $partner])
+                @empty<div class="rounded-xl bg-white p-7 text-sm text-slate-600 md:col-span-2 xl:col-span-3">Belum ada Mitra terverifikasi sesuai filter. Pastikan status sudah disetujui, akun aktif, dan jika layanan sudah dibuat, kategori serta status layanannya aktif. <a href="{{ route('categories.index') }}#mitra-postgresql" class="font-bold text-primary underline">Hapus filter</a>.</div>
+                @endforelse
+            </div><div class="mt-4">{{ $livePartners->links() }}</div>
+        </section>
+        <div class="mb-5 text-xs font-bold uppercase tracking-[.12em] text-slate-500">Di bawah ini: katalog mitra contoh (demo browser)</div>
         {{-- Satu search bar untuk seluruh ukuran layar. --}}
         <form id="jw-catalog-search-form" class="mb-7 flex items-center gap-2" role="search">
             <label for="jw-catalog-search" class="sr-only">Cari layanan atau mitra</label>

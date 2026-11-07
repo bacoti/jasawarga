@@ -4,6 +4,7 @@
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Akun JasaWarga')</title>
+    @include('components.font-imports')
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -25,7 +26,7 @@
     <form class="ml-auto shrink-0" method="POST" action="{{ route('auth.logout') }}">@csrf<button type="submit" class="rounded-xl border border-slate-200 px-3 py-2 font-semibold text-slate-600 hover:bg-slate-100">Keluar</button></form>
 </nav>
 <main class="mx-auto max-w-7xl px-4 py-7 sm:px-6 sm:py-10">
-    @if(session('success'))<div role="status" class="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">{{ session('success') }}</div>@endif
+    @include('components.auth-flash-toast')
     @if($errors->any())<div role="alert" class="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800"><p class="font-bold">Periksa kembali data berikut:</p><ul class="mt-2 list-inside list-disc">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
     @yield('content')
 </main>

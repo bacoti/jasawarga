@@ -197,9 +197,17 @@ if (catalog) {
   });
   catalog.querySelector('#jw-catalog-search-form').addEventListener('submit', event => {
     event.preventDefault();
-    state.search = search.value;
+    state.search = search.value.trim();
+    if (state.search) {
+      // Pencarian utama juga mencari Mitra/layanan PostgreSQL, bukan hanya kartu dummy.
+      const url = new URL('/kategori-jasa', window.location.origin);
+      url.searchParams.set('q', state.search);
+      url.searchParams.set('db_q', state.search);
+      window.location.assign(`${url.pathname}${url.search}#mitra-postgresql`);
+      return;
+    }
     redraw();
-    catalog.querySelector('#hasil-mitra').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    catalog.querySelector('#mitra-postgresql').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   catalog.addEventListener('click', (event) => {

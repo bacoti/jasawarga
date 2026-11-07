@@ -11,7 +11,7 @@
     ['route'=>'admin.reviews','icon'=>'forum','label'=>'Ulasan'],
     ['route'=>'admin.reports','icon'=>'summarize','label'=>'Laporan'],
     ['route'=>'admin.settings','icon'=>'settings','label'=>'Atur'],
-    ['route'=>'admin.analytics.dashboard','icon'=>'analytics','label'=>'DB'],
+    ['route'=>'admin.analytics.database','icon'=>'analytics','label'=>'DB'],
     ['route'=>'admin.bookings.index','icon'=>'event_note','label'=>'Pesanan DB'],
     ['route'=>'notifications.index','icon'=>'notifications','label'=>'Notifikasi'],
 ] as $nav)

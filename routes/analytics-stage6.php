@@ -22,7 +22,10 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(EnsureAccountRole::class.':admin')->prefix('admin')->name('admin.analytics.')->group(function () {
-        Route::get('/overview', AdminDashboardController::class)->name('dashboard');
+        // Tautan dari patch lama tetap membawa Admin ke dashboard desain navy.
+        Route::get('/overview', fn () => redirect()->route('admin.dashboard'))->name('dashboard');
+        // Statistik PostgreSQL tetap tersedia tanpa mengganti tampilan dashboard utama.
+        Route::get('/overview-db', AdminDashboardController::class)->name('database');
         Route::get('/laporan-db', [AdminReportController::class, 'index'])->name('reports');
         Route::get('/laporan-db/export', [AdminReportController::class, 'export'])->name('reports.export');
     });

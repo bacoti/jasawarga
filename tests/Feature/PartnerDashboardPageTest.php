@@ -4,10 +4,13 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use App\Models\PartnerProfile;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PartnerDashboardPageTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();

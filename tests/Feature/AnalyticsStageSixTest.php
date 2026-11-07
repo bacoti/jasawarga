@@ -16,7 +16,8 @@ class AnalyticsStageSixTest extends TestCase
         $admin = User::create(['name' => 'Penguji '.uniqid(), 'email' => uniqid('user', true).'@example.test', 'role' => 'citizen', 'password' => 'password', 'account_status' => 'active']);
         $admin->forceFill(['role' => 'admin'])->save();
 
-        $this->actingAs($admin)->get(route('admin.analytics.dashboard'))->assertOk();
+        $this->actingAs($admin)->get(route('admin.analytics.dashboard'))->assertRedirect(route('admin.dashboard'));
+        $this->actingAs($admin)->get(route('admin.analytics.database'))->assertOk();
         $this->actingAs($admin)->get(route('admin.analytics.reports', ['period' => '30']))->assertOk();
     }
 

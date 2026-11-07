@@ -22,7 +22,7 @@
         </nav>
         <p class="px-3 pb-3 pt-8 text-[10px] font-bold uppercase tracking-[.16em] text-[#92abc3]">Operasional PostgreSQL</p>
         <nav aria-label="Modul database" class="space-y-1.5 text-[13px]">
-            <a href="{{ route('admin.analytics.dashboard') }}" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[#c9d7e5] hover:bg-white/10"><span class="material-symbols-outlined text-[19px]">monitoring</span>Dashboard DB</a>
+            <a href="{{ route('admin.analytics.database') }}" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[#c9d7e5] hover:bg-white/10"><span class="material-symbols-outlined text-[19px]">monitoring</span>Dashboard DB</a>
             <a href="{{ route('admin.bookings.index') }}" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[#c9d7e5] hover:bg-white/10"><span class="material-symbols-outlined text-[19px]">event_note</span>Pesanan DB</a>
             <a href="{{ route('admin.db-feedback.reviews.index') }}" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[#c9d7e5] hover:bg-white/10"><span class="material-symbols-outlined text-[19px]">reviews</span>Moderasi Ulasan DB</a>
             <a href="{{ route('admin.db-feedback.complaints.index') }}" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-[#c9d7e5] hover:bg-white/10"><span class="material-symbols-outlined text-[19px]">support_agent</span>Pengaduan DB</a>

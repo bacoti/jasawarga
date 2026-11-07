@@ -1,3 +1,4 @@
+import './auth-flash-toast.js';
 // Import komponen halaman; masing-masing berjalan hanya jika kontainernya ada.
 import './home.js';
 import './home-map.js';

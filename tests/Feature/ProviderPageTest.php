@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ProviderPageTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_all_demo_providers_have_detail_pages(): void
     {
         foreach (config('jasawarga.providers') as $provider) {
