@@ -6,7 +6,7 @@ const toast = document.querySelector('#jw-toast');
 const dialog = document.querySelector('#jw-dialog');
 const dialogTitle = document.querySelector('#jw-dialog-title');
 const dialogBody = document.querySelector('#jw-dialog-body');
-const locationOptions = ['Panakkukang, Makassar', 'Rappocini, Makassar', 'Tamalate, Makassar', 'Biringkanaya, Makassar'];
+const locationOptions = ['Coblong, Bandung', 'Sukajadi, Bandung', 'Lengkong, Bandung', 'Antapani, Bandung', 'Astanaanyar, Bandung'];
 const state = { location: locationOptions[0] };
 let toastTimer;
 
@@ -56,23 +56,6 @@ function locationPicker() {
     wrapper.appendChild(choice);
   });
   openDialog('Pilih lokasi', wrapper);
-}
-
-function providerProfile(button) {
-  const card = button.closest('.jw-provider-card');
-  const name = button.dataset.jwName || card?.dataset.jwName || 'Mitra JasaWarga';
-  const info = document.createElement('div');
-  info.className = 'space-y-3';
-  const h = document.createElement('p');
-  h.className = 'text-lg font-bold text-primary';
-  h.textContent = name;
-  const p = document.createElement('p');
-  p.textContent = 'Informasi ini berasal dari data contoh pada desain Home. Detail profil dan riwayat pekerjaan akan tersedia saat backend mitra terhubung.';
-  const small = document.createElement('p');
-  small.className = 'rounded-lg bg-surface-container-low p-3 text-on-surface-variant';
-  small.textContent = `Kategori: ${labels[card?.dataset.jwCategory] || 'Layanan jasa lokal'} · Rating contoh: ${card?.dataset.jwRating || '–'}`;
-  info.append(h, p, small);
-  openDialog('Profil mitra', info);
 }
 
 function initExperience(view) {
@@ -155,10 +138,10 @@ function initExperience(view) {
         break;
       case 'location': locationPicker(); break;
       case 'notifications': openDialog('Kabar warga', 'Notifikasi baru akan ditampilkan ketika sistem backend terhubung.'); break;
-      case 'profile': providerProfile(trigger); break;
-      case 'order':
-      case 'orders': window.location.assign('/pesanan-saya'); break;
-      case 'quick-order': openDialog('Pemesanan jasa', demoNotice); break;
+      case 'profile': { const id = Number(trigger.dataset.jwProviderId || trigger.closest('[data-jw-provider-id]')?.dataset.jwProviderId); if (Number.isInteger(id) && id > 0) window.location.assign(`/mitra/${id}`); break; }
+      case 'order': { const id = Number(trigger.dataset.jwProviderId || trigger.closest('[data-jw-provider-id]')?.dataset.jwProviderId); if (Number.isInteger(id) && id > 0) window.location.assign(`/pemesanan/${id}`); else window.location.assign('/kategori-jasa'); break; }
+      case 'orders': window.location.assign('/akun/pesanan'); break;
+      case 'quick-order': { const role = document.documentElement.dataset.jwServerRole; window.location.assign(role === 'citizen' ? '/kategori-jasa' : role === 'partner' ? '/mitra/portal' : role === 'admin' ? '/admin/overview' : '/masuk'); break; }
       case 'rates': openDialog('Standar tarif', 'Harga yang terlihat pada Home merupakan data contoh. Tarif resmi akan ditampilkan setelah sumber data terintegrasi.'); break;
       case 'filter-help':
         scrollTo('[data-jw-list-target]');
@@ -166,10 +149,10 @@ function initExperience(view) {
         break;
       case 'categories': event.preventDefault(); scrollTo('#kategori-layanan'); break;
       case 'list': scrollTo('[data-jw-list-target]'); break;
-      case 'map': scrollTo('[data-jw-map-target]'); showToast('Peta ini masih ilustrasi statis pada prototipe.'); break;
-      case 'zoom': showToast('Zoom peta tersedia setelah integrasi peta interaktif.'); break;
-      case 'my-location': showToast('Lokasi pada peta masih ilustrasi; GPS belum terhubung.'); break;
-      case 'radius': showToast('Pengaturan radius akan tersedia setelah layanan peta terintegrasi.'); break;
+      case 'map': scrollTo('[data-jw-map-target]'); window.dispatchEvent(new Event('jasawarga:map-focus')); break;
+      case 'zoom': window.dispatchEvent(new CustomEvent('jasawarga:map-zoom',{detail:trigger.dataset.zoomDirection==='out'?-1:1})); break;
+      case 'my-location': window.dispatchEvent(new Event('jasawarga:map-center')); break;
+      case 'radius': window.dispatchEvent(new Event('jasawarga:map-focus')); break;
       case 'help': event.preventDefault(); openDialog('Bantuan Warga', 'Halaman bantuan lengkap akan dibuat pada tahap berikutnya.'); break;
       case 'contact': openDialog('Kontak JasaWarga', 'Hubungi layanan warga melalui kanal resmi setelah diintegrasikan.'); break;
       case 'home': window.scrollTo({ top: 0, behavior: 'smooth' }); break;

@@ -13,7 +13,7 @@ const notify = () => { if (typeof window !== 'undefined') window.dispatchEvent(n
 const store = () => { if (typeof localStorage === 'undefined') throw new Error('Penyimpanan browser tidak tersedia.'); return localStorage; };
 const sessions = () => { if (typeof sessionStorage === 'undefined') throw new Error('Sesi browser tidak tersedia.'); return sessionStorage; };
 const prefsDefault = () => ({notifications:true, updates:false});
-const demo = () => ({id:'jw-warga-demo', name:'Budi Santoso (Demo)', email:DEMO_EMAIL, phone:'081200000000', avatar:'', addresses:[{id:'alamat-demo',label:'Rumah (Contoh)',recipient:'Budi Santoso',phone:'081200000000',area:'Panakkukang',street:'Jl. Contoh No. 12, Makassar',landmark:'Dekat balai warga',isDefault:true}],preferences:prefsDefault(),createdAt:Date.now()});
+const demo = () => ({id:'jw-warga-demo', name:'Budi Santoso (Demo)', email:DEMO_EMAIL, phone:'081200000000', avatar:'', addresses:[{id:'alamat-demo',label:'Rumah (Contoh)',recipient:'Budi Santoso',phone:'081200000000',area:'Coblong',street:'Jl. Contoh No. 12, Bandung',landmark:'Dekat balai warga',isDefault:true}],preferences:prefsDefault(),createdAt:Date.now()});
 export const normalizeEmail = value => pureString(value).toLowerCase();
 function validAccount(a) {
   return a && typeof a==='object' && /^jw-warga-[a-z0-9-]+$/.test(a.id||'') &&
@@ -77,7 +77,7 @@ function checkAddress(data) {
   if(!a.label||a.label.length>35)throw new Error('Label alamat wajib, maksimal 35 karakter.');
   if(a.recipient.length<2||a.recipient.length>80)throw new Error('Nama penerima harus 2–80 karakter.');
   if(!phoneRE.test(a.phone))throw new Error('Nomor WA penerima tidak valid.');
-  if(!['Panakkukang','Rappocini','Tamalate','Biringkanaya','Manggala','Makassar','Ujung Pandang'].includes(a.area))throw new Error('Pilih kecamatan yang tersedia.');
+  if(!["Coblong","Sukajadi","Lengkong","Antapani","Astanaanyar","Kiaracondong","Bandung Wetan","Regol","Andir","Cicendo","Sukasari"].includes(a.area))throw new Error('Pilih kecamatan yang tersedia.');
   if(a.street.length<10||a.street.length>240)throw new Error('Alamat harus 10–240 karakter.');
   if(a.landmark.length>150)throw new Error('Patokan maksimal 150 karakter.');
   return a;

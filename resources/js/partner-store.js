@@ -140,7 +140,7 @@ export function seedPartnerDemoOrders(provider) {
       price: Number(provider.price),
       date: localDateKey(date.getTime()),
       time: '11:00',
-      area: 'Panakkukang',
+      area: 'Coblong',
       address: 'Alamat contoh (bukan alamat pelanggan asli)',
       description: `Simulasi pekerjaan mitra — data contoh ${i + 1}`,
       createdAt: now - i * 60000,

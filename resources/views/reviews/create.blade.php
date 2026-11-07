@@ -7,16 +7,7 @@
      data-reference="{{ $reference }}"
      data-order-base="{{ url('/pesanan-saya') }}"
      data-reviews-url="{{ route('reviews.index') }}">
-    <header class="sticky top-0 z-40 border-b border-outline-variant/40 bg-white/95 backdrop-blur">
-        <div class="mx-auto flex h-[70px] max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-3">
-                <a href="{{ route('orders.show', $reference) }}" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-low" aria-label="Kembali ke detail pesanan"><span class="material-symbols-outlined">arrow_back</span></a>
-                <div><a href="{{ route('home') }}" class="text-base font-extrabold tracking-tight text-primary sm:text-xl">JasaWarga</a><p class="text-xs text-outline">Rating & ulasan pelanggan</p></div>
-            </div>
-            <div class="flex items-center gap-3"><a href="{{ route('account.profile') }}" data-jw-account-link class="text-xs font-bold text-primary hover:underline">Akun</a><span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[10px] font-bold text-primary sm:text-xs">MODE DEMO</span></div>
-        </div>
-    </header>
-
+    @include('components.site-navbar')
     <main class="mx-auto max-w-6xl px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14 lg:pt-9">
         <nav aria-label="Breadcrumb" class="mb-6 hidden items-center gap-2 text-xs text-outline lg:flex">
             <a href="{{ route('home') }}" class="hover:text-primary">Beranda</a><span class="material-symbols-outlined text-[16px]">chevron_right</span>

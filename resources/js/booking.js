@@ -27,9 +27,9 @@ function formatDateId(iso) {
   }).format(date);
 }
 
-function localDateMakassar() {
+function localDateBandung() {
   const parts = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Makassar', year: 'numeric', month: '2-digit', day: '2-digit',
+    timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit',
   }).formatToParts(new Date());
   const get = (type) => parts.find(p => p.type === type).value;
   return `${get('year')}-${get('month')}-${get('day')}`;
@@ -122,7 +122,7 @@ if (booking) {
     fields.time.append(blank);
     const day = fields.date.value;
     if (!day) {
-      dateHint.textContent = 'Pilih tanggal terlebih dahulu untuk melihat slot mitra yang tersedia (WITA).';
+      dateHint.textContent = 'Pilih tanggal terlebih dahulu untuk melihat slot mitra yang tersedia (WIB).';
       renderSummary();
       return;
     }
@@ -132,7 +132,7 @@ if (booking) {
       const option = document.createElement('option');
       option.value = slot.time;
       option.disabled = !slot.ok;
-      option.textContent = `${slot.time.replace(':', '.')} WITA${slot.ok ? '' : ' · Tidak tersedia'}`;
+      option.textContent = `${slot.time.replace(':', '.')} WIB${slot.ok ? '' : ' · Tidak tersedia'}`;
       option.title = slot.reason;
       fields.time.append(option);
     });
@@ -167,7 +167,7 @@ if (booking) {
       .forEach(node => { node.textContent = option?.value ? option.dataset.feeNote || 'Biaya tambahan menyesuaikan kondisi pekerjaan.' : ''; });
     const dateValue = fields.date.value;
     const schedule = dateValue && fields.time.value
-      ? `${formatDateId(dateValue)}, ${fields.time.value.replace(':', '.')} WITA`
+      ? `${formatDateId(dateValue)}, ${fields.time.value.replace(':', '.')} WIB`
       : 'Jadwal belum dipilih';
     booking.querySelectorAll('[data-booking-schedule-label]')
       .forEach(node => { node.textContent = schedule; });
@@ -211,7 +211,7 @@ if (booking) {
     }
   }
 
-  const todayWita = localDateMakassar();
+  const todayWita = localDateBandung();
   fields.date.min = addUtcDays(todayWita, 1);
   fields.date.max = addUtcDays(todayWita, 30);
 
@@ -372,10 +372,10 @@ if (success) {
       reference: record.reference,
       provider: record.provider,
       service: record.service,
-      schedule: `${formatDateId(record.date)}, ${record.time.replace(':', '.')} WITA`,
+      schedule: `${formatDateId(record.date)}, ${record.time.replace(':', '.')} WIB`,
       name: record.name,
       phone: record.phone,
-      area: `${record.area}, Makassar`,
+      area: `${record.area}, Bandung`,
       address: [record.address, record.landmark ? `Patokan: ${record.landmark}` : ''].filter(Boolean).join(' · '),
       description: [record.description, record.note ? `Catatan: ${record.note}` : ''].filter(Boolean).join('\n'),
       total: idr.format(record.price),

@@ -11,7 +11,7 @@
             <p class="mt-2 text-sm text-on-surface-variant">Mode demonstrasi dashboard mitra lokal</p>
         </div>
         <div class="space-y-4 px-6 py-7">
-            <div class="rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3"><strong class="text-sm">Budi Teknik</strong><p class="mt-1 text-xs text-outline">Mitra contoh · ID 1 · Makassar</p></div>
+            <div class="rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3"><strong class="text-sm">Budi Teknik</strong><p class="mt-1 text-xs text-outline">Mitra contoh · ID 1 · Bandung</p></div>
             <p class="text-sm leading-relaxed text-on-surface-variant">Tekan tombol untuk kembali ke dashboard demo. Tidak ada proses login, password, atau verifikasi akun. Siapa pun yang membuka URL dashboard masih dapat mengaksesnya karena prototipe ini belum menggunakan autentikasi server.</p>
             <button type="button" data-ps-enter class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-container"><span class="material-symbols-outlined">login</span>Masuk ke Mode Mitra Demo</button>
             <a href="{{ route('home') }}" class="block text-center text-sm font-semibold text-primary hover:underline">Kembali ke halaman Warga</a>

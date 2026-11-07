@@ -13,39 +13,8 @@
     <script type="application/json" data-booking-categories-seed>@json(config('jasawarga.categories', []))</script>
     <script type="application/json" data-booking-services-seed>{!! json_encode($profile['services'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
     {{-- Desktop navbar --}}
-    <header class="sticky top-0 z-40 hidden border-b border-outline-variant/40 bg-white/95 backdrop-blur lg:block">
-        <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-8 px-8">
-            <div class="flex items-center gap-9">
-                <a href="{{ route('home') }}" class="flex flex-col leading-none" aria-label="JasaWarga - Beranda">
-                    <span class="text-[22px] font-extrabold tracking-tight text-primary">JasaWarga</span>
-                    <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.11em] text-outline">Layanan Warga Makassar</span>
-                </a>
-                <nav class="flex items-center gap-7 text-sm" aria-label="Navigasi utama">
-                    <a href="{{ route('home') }}" class="text-on-surface-variant hover:text-primary">Beranda</a>
-                    <a href="{{ route('categories.index') }}" class="text-on-surface-variant hover:text-primary">Kategori Jasa</a>
-                    <a href="{{ route('providers.show', $provider['id']) }}" class="text-on-surface-variant hover:text-primary">Detail Mitra</a>
-                    <a href="{{ route('orders.index') }}" class="text-on-surface-variant hover:text-primary">Pesanan Saya</a><span class="font-bold text-primary" aria-current="page">Pemesanan</span><a href="{{ route('account.profile') }}" data-jw-account-link class="text-on-surface-variant hover:text-primary">Akun Warga</a>
-                </nav>
-            </div>
-            <span class="inline-flex items-center gap-2 rounded-full bg-primary-fixed px-3 py-2 text-xs font-bold text-primary">
-                <span class="material-symbols-outlined text-[17px]">lock</span>
-                Form simulasi
-            </span>
-        </div>
-    </header>
-
+    @include('components.site-navbar')
     {{-- Mobile header --}}
-    <header class="sticky top-0 z-40 flex items-center gap-3 border-b border-outline-variant/40 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
-        <a href="{{ route('providers.show', $provider['id']) }}" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-container-low" aria-label="Kembali ke Detail Mitra">
-            <span class="material-symbols-outlined">arrow_back</span>
-        </a>
-        <div class="min-w-0">
-            <h1 class="truncate text-base font-extrabold">Pesan Jasa</h1>
-            <p class="truncate text-xs text-outline">{{ $provider['name'] }} · Makassar</p>
-        </div>
-        <a href="{{ route('account.profile') }}" data-jw-account-link class="ml-auto inline-flex items-center justify-center gap-1 rounded-xl bg-primary-fixed px-3 py-2 text-xs font-bold text-primary"><span class="material-symbols-outlined text-[18px]">person</span> Akun</a>
-    </header>
-
     <main class="mx-auto max-w-7xl px-4 pb-36 pt-5 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
         <nav class="mb-5 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb">
             <a href="{{ route('home') }}" class="hover:text-primary">Beranda</a>
@@ -90,7 +59,7 @@
 
                     <div class="mb-4 flex items-center gap-3 rounded-xl bg-surface-container-low p-3.5">
                         <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold" style="background-color: {{ $provider['bg'] }}">{{ $provider['initials'] }}</div>
-                        <div class="min-w-0 flex-1"><p class="truncate text-sm font-extrabold">{{ $provider['name'] }}</p><p class="mt-0.5 truncate text-xs text-on-surface-variant">{{ $category['name'] ?? 'Jasa' }} · {{ $provider['area'] }}, Makassar</p></div>
+                        <div class="min-w-0 flex-1"><p class="truncate text-sm font-extrabold">{{ $provider['name'] }}</p><p class="mt-0.5 truncate text-xs text-on-surface-variant">{{ $category['name'] ?? 'Jasa' }} · {{ $provider['area'] }}, Bandung</p></div>
                         <a href="{{ route('providers.show', $provider['id']) }}#layanan" class="text-xs font-bold text-primary hover:underline">Profil</a>
                     </div>
 
@@ -144,13 +113,13 @@
                 <section class="rounded-2xl border border-outline-variant/40 bg-white p-4 shadow-sm sm:p-6" aria-labelledby="booking-schedule-title">
                     <div class="mb-5 flex items-center gap-3">
                         <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-fixed text-primary"><span class="material-symbols-outlined">event</span></span>
-                        <div><h3 id="booking-schedule-title" class="text-base font-extrabold sm:text-lg">Jadwal kedatangan</h3><p class="text-xs text-outline">Seluruh jam menggunakan WITA (Makassar)</p></div>
+                        <div><h3 id="booking-schedule-title" class="text-base font-extrabold sm:text-lg">Jadwal kedatangan</h3><p class="text-xs text-outline">Seluruh jam menggunakan WIB (Bandung)</p></div>
                     </div>
 
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div>
                             <label for="booking-date" class="mb-1.5 block text-sm font-semibold">Tanggal <span class="text-error">*</span></label>
-                            <input id="booking-date" name="date" type="date" required min="{{ now('Asia/Makassar')->addDay()->toDateString() }}" max="{{ now('Asia/Makassar')->addDays(30)->toDateString() }}" class="w-full rounded-xl border-outline-variant/70 bg-white text-sm focus:border-primary focus:ring-primary">
+                            <input id="booking-date" name="date" type="date" required min="{{ now('Asia/Jakarta')->addDay()->toDateString() }}" max="{{ now('Asia/Jakarta')->addDays(30)->toDateString() }}" class="w-full rounded-xl border-outline-variant/70 bg-white text-sm focus:border-primary focus:ring-primary">
                         </div>
                         <div>
                             <label for="booking-time" class="mb-1.5 block text-sm font-semibold">Perkiraan jam tiba <span class="text-error">*</span></label>
@@ -161,7 +130,7 @@
                         </div>
                     </div>
                     <p id="jw-booking-date-hint" class="mt-3 text-xs leading-relaxed text-outline">
-                        Pilih tanggal untuk melihat slot WITA berdasarkan pengaturan Mitra. Slot yang sudah direservasi akan dinonaktifkan (simulasi browser ini).
+                        Pilih tanggal untuk melihat slot WIB berdasarkan pengaturan Mitra. Slot yang sudah direservasi akan dinonaktifkan (simulasi browser ini).
                     </p>
                 </section>
 

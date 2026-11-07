@@ -21,7 +21,7 @@
 <div class="min-h-screen bg-[#f3f6f9] text-[#23354a] lg:flex">
     <aside class="hidden w-[252px] shrink-0 flex-col bg-[#142e44] text-white lg:sticky lg:top-0 lg:flex lg:h-screen">
         <a href="{{ route('home') }}" class="flex items-center gap-3 border-b border-white/10 px-6 py-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1685b4]"><span class="material-symbols-outlined">handyman</span></span>
+            <img src="{{ asset('assets/brand/jasawarga-icon-256.png') }}" alt="Logo JasaWarga" class="h-11 w-11 rounded-xl object-cover">
             <span><strong class="block text-xl">JasaWarga</strong><small class="text-[11px] text-blue-200">Feedback PostgreSQL</small></span>
         </a>
         <nav class="space-y-1 px-3 py-6" aria-label="Navigasi modul ulasan dan pengaduan">

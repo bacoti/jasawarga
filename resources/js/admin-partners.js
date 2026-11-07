@@ -32,7 +32,7 @@ if (root) {
     selectedId=id;
     const state=readPartnerModeration(), status=partnerVerification(p,state);
     $('[data-partner-detail-title]').textContent=currentName(p);
-    $('[data-partner-detail-meta]').textContent=`${categories.find(c=>c.slug===p.category)?.name||'Layanan'} · ${p.area}, Makassar`;
+    $('[data-partner-detail-meta]').textContent=`${categories.find(c=>c.slug===p.category)?.name||'Layanan'} · ${p.area}, Bandung`;
     $('[data-partner-detail-status]').textContent=statusNames[status];
     $('[data-partner-detail-services]').textContent=activeServices(id,profiles[String(id)]?.services||[],p.category,readCategories(categorySeed)).length;
     const orders=readOrders().filter(o=>o.providerId===id);

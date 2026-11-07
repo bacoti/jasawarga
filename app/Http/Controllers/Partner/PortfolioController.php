@@ -19,7 +19,7 @@ class PortfolioController extends Controller
         $user = auth()->user();
         return PartnerProfile::firstOrCreate(
             ['user_id' => $user->id],
-            ['business_name' => $user->name, 'business_phone' => $user->phone ?: '00000000', 'service_area' => 'Makassar', 'slug' => (Str::slug($user->name) ?: 'mitra').'-'.$user->id, 'city' => 'Makassar', 'service_areas' => []]
+            ['business_name' => $user->name, 'business_phone' => $user->phone ?: '00000000', 'service_area' => 'Bandung', 'slug' => (Str::slug($user->name) ?: 'mitra').'-'.$user->id, 'city' => 'Bandung', 'service_areas' => []]
         );
     }
 

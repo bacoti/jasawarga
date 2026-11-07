@@ -46,7 +46,7 @@ if (root) {
     const container = $('[data-sch-slots-list]');
     container.replaceChildren();
     state.slots.slice().sort().forEach(time => {
-      const chip = el('span', 'inline-flex items-center gap-1.5 rounded-lg border border-outline-variant/60 bg-surface-container-low px-2 py-1.5 text-xs font-bold', `${time.replace(':', '.')} WITA`);
+      const chip = el('span', 'inline-flex items-center gap-1.5 rounded-lg border border-outline-variant/60 bg-surface-container-low px-2 py-1.5 text-xs font-bold', `${time.replace(':', '.')} WIB`);
       const remove = el('button', 'rounded-md p-0.5 text-outline hover:text-error', '×');
       remove.type = 'button';
       remove.setAttribute('aria-label', `Hapus slot ${time}`);
@@ -217,7 +217,7 @@ if (root) {
     $('[data-sch-selected-title]').textContent = displayDate(date);
     const closed = dateClosedReason(date, state.schedule, { today });
     const available = getPartnerAvailability(providerId).available;
-    $('[data-sch-day-note]').textContent = closed || (!available ? 'Mitra sedang menjeda penerimaan booking baru.' : 'Reservasi dan slot 60 menit · WITA');
+    $('[data-sch-day-note]').textContent = closed || (!available ? 'Mitra sedang menjeda penerimaan booking baru.' : 'Reservasi dan slot 60 menit · WIB');
     const container = $('[data-sch-day-orders]');
     container.replaceChildren();
     const dayOrders = ordersForDate(date);

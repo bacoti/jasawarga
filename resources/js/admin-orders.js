@@ -6,10 +6,10 @@ if(root){
   const $=selector=>root.querySelector(selector);
   const el=(tag,classes='',content='')=>{const node=document.createElement(tag);node.className=classes;node.textContent=String(content);return node};
   const idr=new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0});
-  const dt=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Makassar'});
+  const dt=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Jakarta'});
   const statusClasses={pending:'bg-amber-50 text-amber-800',accepted:'bg-blue-50 text-blue-800',enroute:'bg-blue-50 text-blue-800',working:'bg-indigo-50 text-indigo-800',completed:'bg-emerald-50 text-emerald-800',cancelled:'bg-slate-100 text-slate-600',rejected:'bg-rose-50 text-rose-700'};
   let displayed=[];
-  const format=v=>Number.isFinite(v)?`${dt.format(new Date(v))} WITA`:'—';
+  const format=v=>Number.isFinite(v)?`${dt.format(new Date(v))} WIB`:'—';
   const status=v=>ORDER_LABELS[v]||'Tidak diketahui';
   function notice(message,isError=false){const box=$('[data-notice]');box.textContent=message;box.className=`rounded-xl border px-4 py-3 text-sm font-semibold ${isError?'border-rose-200 bg-rose-50 text-rose-700':'border-blue-200 bg-blue-50 text-primary'}`;}
   function filtered(all){
@@ -43,7 +43,7 @@ if(root){
       const tr=el('tr','hover:bg-surface-container-low/40');
       const reference=el('td','px-4 py-3 align-top');reference.append(el('p','text-xs font-extrabold text-primary',order.reference),el('p','mt-1 text-[11px] text-outline',format(order.createdAt)));
       const service=el('td','px-4 py-3 align-top');service.append(el('p','max-w-[210px] text-sm font-bold',order.service),el('p','mt-1 text-xs text-outline',order.provider));
-      const visit=el('td','px-4 py-3 align-top text-xs text-on-surface-variant',`${order.date} · ${order.time} WITA`);
+      const visit=el('td','px-4 py-3 align-top text-xs text-on-surface-variant',`${order.date} · ${order.time} WIB`);
       const amount=el('td','px-4 py-3 align-top text-xs font-semibold',idr.format(order.price));
       const label=el('td','px-4 py-3 align-top');label.append(el('span',`rounded-full px-2.5 py-1 text-[11px] font-bold ${statusClasses[order.status]||'bg-slate-100'}`,status(order.status)));
       const action=el('td','px-4 py-3 align-top');const btn=el('button','rounded-lg border border-outline-variant/60 px-3 py-2 text-[11px] font-bold text-primary hover:bg-primary-fixed/35','Lihat detail');btn.type='button';btn.dataset.reference=order.reference;action.append(btn);
@@ -59,7 +59,7 @@ if(root){
     $('[data-detail-heading]').textContent=item.reference;
     $('[data-detail-subhead]').textContent=`${item.service} · ${item.provider}`;
     const info=$('[data-detail-info]');info.replaceChildren();
-    [ ['Status',status(item.status)],['Waktu kunjungan',`${item.date} · ${item.time} WITA`],['Area (tanpa alamat)',item.area||'—'],['Estimasi tarif',idr.format(item.price)],['Pelanggan','Identitas disembunyikan pada tampilan Admin'],['Akun Warga',item.accountId?'Tertaut ke akun lokal':'Tidak tertaut / data lama']].forEach(([key,value])=>{const row=el('div','flex flex-wrap justify-between gap-2 border-b border-outline-variant/30 pb-2 last:border-0');row.append(el('span','text-outline',key),el('strong','max-w-[300px] break-words text-right',value));info.append(row)});
+    [ ['Status',status(item.status)],['Waktu kunjungan',`${item.date} · ${item.time} WIB`],['Area (tanpa alamat)',item.area||'—'],['Estimasi tarif',idr.format(item.price)],['Pelanggan','Identitas disembunyikan pada tampilan Admin'],['Akun Warga',item.accountId?'Tertaut ke akun lokal':'Tidak tertaut / data lama']].forEach(([key,value])=>{const row=el('div','flex flex-wrap justify-between gap-2 border-b border-outline-variant/30 pb-2 last:border-0');row.append(el('span','text-outline',key),el('strong','max-w-[300px] break-words text-right',value));info.append(row)});
     const hist=$('[data-detail-history]');hist.replaceChildren();
     const history=Array.isArray(item.history)?[...item.history]:[];
     history.sort((a,b)=>Number(a.at)-Number(b.at));

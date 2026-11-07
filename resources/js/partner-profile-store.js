@@ -5,11 +5,40 @@
  */
 export const PROFILE_KEY = 'jasawarga:prototype-partner-profiles:v1';
 export const PROFILE_EVENT = 'jasawarga:partner-profile-updated';
-export const MAKASSAR_AREAS = Object.freeze([
-  'Biringkanaya', 'Bontoala', 'Kepulauan Sangkarrang', 'Makassar',
-  'Mamajang', 'Manggala', 'Mariso', 'Panakkukang', 'Rappocini', 'Tallo',
-  'Tamalanrea', 'Tamalate', 'Ujung Pandang', 'Ujung Tanah', 'Wajo',
+export const BANDUNG_AREAS = Object.freeze([
+  'Andir',
+  'Antapani',
+  'Arcamanik',
+  'Astanaanyar',
+  'Babakan Ciparay',
+  'Bandung Kidul',
+  'Bandung Kulon',
+  'Bandung Wetan',
+  'Batununggal',
+  'Bojongloa Kaler',
+  'Bojongloa Kidul',
+  'Buahbatu',
+  'Cibeunying Kaler',
+  'Cibeunying Kidul',
+  'Cibiru',
+  'Cicendo',
+  'Cidadap',
+  'Cinambo',
+  'Coblong',
+  'Gedebage',
+  'Kiaracondong',
+  'Lengkong',
+  'Mandalajati',
+  'Panyileukan',
+  'Rancasari',
+  'Regol',
+  'Sukajadi',
+  'Sukasari',
+  'Sumur Bandung',
+  'Ujungberung'
 ]);
+// Kompatibilitas internal dengan modul lama; opsi pengguna tetap daftar kecamatan Bandung.
+export const MAKASSAR_AREAS = BANDUNG_AREAS;
 export const MAX_PROJECTS = 9;
 export const MAX_IMAGE_CHARS = 440000; // base64 data URL per gambar, hindari melampaui quota
 
@@ -33,11 +62,11 @@ const unique = array => [...new Set(array)];
 export function seedPartnerProfile(provider, profile) {
   const years = parseInt(String(profile?.experience || '0'), 10);
   const coverage = Array.isArray(profile?.coverage)
-    ? unique(profile.coverage.filter(area => MAKASSAR_AREAS.includes(area))) : [];
-  const fallbackArea = MAKASSAR_AREAS.includes(provider?.area) ? provider.area : 'Panakkukang';
+    ? unique(profile.coverage.filter(area => BANDUNG_AREAS.includes(area))) : [];
+  const fallbackArea = BANDUNG_AREAS.includes(provider?.area) ? provider.area : 'Coblong';
   return {
     name: asText(provider?.name || 'Mitra JasaWarga'),
-    headline: asText(profile?.headline || 'Penyedia layanan lokal Makassar.'),
+    headline: asText(profile?.headline || 'Penyedia layanan lokal Bandung.'),
     about: asText(profile?.about || 'Informasi usaha mitra.'),
     specialties: unique([asText(provider?.service || 'Layanan jasa')]).slice(0, 5),
     experienceYears: Number.isFinite(years) ? Math.max(0, Math.min(50, years)) : 0,
@@ -60,7 +89,7 @@ function isProject(value) {
     typeof value.id === 'string' && /^(demo-\d+|project-[a-zA-Z0-9-]+)$/.test(value.id) &&
     typeof value.title === 'string' && value.title.trim().length >= 3 && value.title.length <= 90 &&
     typeof value.description === 'string' && value.description.length <= 360 &&
-    MAKASSAR_AREAS.includes(value.area) && safeImage(value.imageDataUrl) &&
+    BANDUNG_AREAS.includes(value.area) && safeImage(value.imageDataUrl) &&
     typeof value.isDemo === 'boolean' &&
     typeof value.icon === 'string' && /^[-a-z_]{2,40}$/.test(value.icon) &&
     typeof value.color === 'string' && /^#[0-9a-fA-F]{6}$/.test(value.color);
@@ -75,7 +104,7 @@ function isProfile(value) {
     Array.isArray(value.specialties) && value.specialties.length >= 1 && value.specialties.length <= 5 &&
     value.specialties.every(item => typeof item === 'string' && item.trim().length >= 2 && item.length <= 45) &&
     Array.isArray(value.coverage) && value.coverage.length >= 1 && value.coverage.length <= 15 &&
-    value.coverage.every(area => MAKASSAR_AREAS.includes(area)) &&
+    value.coverage.every(area => BANDUNG_AREAS.includes(area)) &&
     safeImage(value.avatarDataUrl) && safeImage(value.coverDataUrl) &&
     Array.isArray(value.projects) && value.projects.length <= MAX_PROJECTS &&
     value.projects.every(isProject) &&
@@ -127,7 +156,7 @@ export function validateProfileFields(input) {
   if (!Number.isSafeInteger(value.experienceYears) || value.experienceYears < 0 || value.experienceYears > 50) throw new Error('Pengalaman harus 0–50 tahun.');
   if (value.phone && !/^(?:\+62|62|0)8\d{8,12}$/.test(value.phone)) throw new Error('Nomor WhatsApp Indonesia tidak valid.');
   if (!specialties.length || specialties.length > 5 || specialties.some(s => s.length < 2 || s.length > 45)) throw new Error('Isi 1–5 spesialisasi, dipisahkan koma (2–45 karakter per item).');
-  if (!coverage.length || coverage.length > 15 || coverage.some(s => !MAKASSAR_AREAS.includes(s))) throw new Error('Pilih minimal satu kecamatan di Makassar.');
+  if (!coverage.length || coverage.length > 30 || coverage.some(s => !BANDUNG_AREAS.includes(s))) throw new Error('Pilih minimal satu kecamatan di Bandung.');
   if (!safeImage(value.avatarDataUrl) || !safeImage(value.coverDataUrl)) throw new Error('Foto profil atau cover tidak sesuai batas ukuran.');
   return value;
 }
@@ -144,7 +173,7 @@ export function savePartnerProject(providerId, provider, seed, input, editId = '
   const imageDataUrl = input.imageDataUrl ?? '';
   if (title.length < 3 || title.length > 90) throw new Error('Judul portofolio harus 3–90 karakter.');
   if (description.length < 15 || description.length > 360) throw new Error('Deskripsi portofolio harus 15–360 karakter.');
-  if (!MAKASSAR_AREAS.includes(area)) throw new Error('Pilih kecamatan pekerjaan yang valid.');
+  if (!BANDUNG_AREAS.includes(area)) throw new Error('Pilih kecamatan pekerjaan yang valid.');
   if (!safeImage(imageDataUrl)) throw new Error('Foto pekerjaan tidak valid atau terlalu besar.');
   const index = current.projects.findIndex(item => item.id === editId);
   if (editId && index < 0) throw new Error('Portofolio yang diedit tidak ditemukan.');

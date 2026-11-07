@@ -9,10 +9,10 @@
 <div class="relative z-10 max-w-xl">
 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm uppercase tracking-wide mb-3">
 <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">handshake</span>
-              Komunitas Gotong Royong Makassar
+              Komunitas Gotong Royong Bandung
             </div>
 <h1 class="font-headline-lg text-headline-lg text-on-surface mb-2 tracking-tight">
-              Halo, Warga Makassar! Butuh bantuan tukang atau teknisi hari ini?
+              Halo, Warga Bandung! Butuh bantuan tukang atau teknisi hari ini?
             </h1>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">
               As easy as ordering a ride. As simple as finding a neighbor. Seluruh mitra diverifikasi identitas dan diawasi oleh RT/RW setempat.
@@ -24,7 +24,7 @@
               </button>
 <button class="px-4 py-2 bg-surface-container-lowest hover:bg-surface-container-low text-primary border border-primary/20 rounded-xl font-label-lg active:scale-[0.98] transition-all flex items-center gap-2" data-jw-action="rates" type="button">
 <span class="material-symbols-outlined text-[18px]">verified</span>
-                Cek Standar Tarif Makassar
+                Cek Standar Tarif Bandung
               </button>
 </div>
 </div>
@@ -145,10 +145,10 @@
             </span>
 </div>
 <!-- Card 1: Budi Teknik (Servis AC) -->
-<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="true" data-jw-category="ac" data-jw-distance="1.2" data-jw-name="Budi Teknik" data-jw-rating="4.9" data-jw-warranty="true">
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="true" data-jw-category="ac" data-jw-distance="1.2" data-jw-name="Budi Teknik" data-jw-provider-id="1" data-jw-rating="4.9" data-jw-warranty="true">
 <div class="flex items-start gap-4">
 <div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container-low shrink-0 border border-outline-variant/30">
-<img alt="An authentic portrait photo of an experienced Indonesian HVAC AC repair technician named Budi smiling warmly in Makassar, wearing " class="w-full h-full object-cover" data-alt="An authentic portrait photo of an experienced Indonesian HVAC AC repair technician named Budi smiling warmly in Makassar, wearing a clean navy blue polo work uniform with technical tools slung over his shoulder, bright clean ambient outdoor daylight." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0G7HbG1EmyDuduEYkTMhr-hLSOlnLstB4hPC7OcieLjgvJJyCl_DeSkC4pCGtcrgg6b3ezLHgJiAcDBOm3JP-6nGRbLgj6rP__TET10738EZV1taIuDNj_dZ_hcd-QFhUcHhNvGnu9s2h_EPgM5aowjr6WuM4ACRhDKXL-iyv-Hh1JigEKGmm0UQjDWOYbxQm9I9hy3ehhFMd_z3E6gajhzRKzPrXO2yXkzTEgXoR"/>
+<img alt="An authentic portrait photo of an experienced Indonesian HVAC AC repair technician named Budi smiling warmly in Bandung, wearing " class="w-full h-full object-cover" data-alt="An authentic portrait photo of an experienced Indonesian HVAC AC repair technician named Budi smiling warmly in Bandung, wearing a clean navy blue polo work uniform with technical tools slung over his shoulder, bright clean ambient outdoor daylight." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0G7HbG1EmyDuduEYkTMhr-hLSOlnLstB4hPC7OcieLjgvJJyCl_DeSkC4pCGtcrgg6b3ezLHgJiAcDBOm3JP-6nGRbLgj6rP__TET10738EZV1taIuDNj_dZ_hcd-QFhUcHhNvGnu9s2h_EPgM5aowjr6WuM4ACRhDKXL-iyv-Hh1JigEKGmm0UQjDWOYbxQm9I9hy3ehhFMd_z3E6gajhzRKzPrXO2yXkzTEgXoR"/>
 <div class="absolute bottom-0 right-0 bg-emerald-500 w-3.5 h-3.5 rounded-tl-lg ring-2 ring-surface-container-lowest" title="Online Sekarang"></div>
 </div>
 <div>
@@ -162,7 +162,7 @@
 <div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 mb-1.5">
 <span class="font-semibold text-primary">Servis AC &amp; Cuci AC</span>
 <span class="">•</span>
-<span class="">Kecamatan Panakkukang (1.2 km)</span>
+<span class="">Kecamatan Coblong (1.2 km)</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-1 font-label-md text-label-md text-tertiary">
@@ -181,20 +181,20 @@
 <span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 75.000</span>
 </div>
 <div class="flex items-center gap-2">
-<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-name="Budi Teknik" type="button">
+<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-provider-id="1" data-jw-name="Budi Teknik" type="button">
                   Lihat Profil
                 </button>
-<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-name="Budi Teknik" type="button">
+<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-provider-id="1" data-jw-name="Budi Teknik" type="button">
                   Pesan Jasa
                 </button>
 </div>
 </div>
 </article>
 <!-- Card 2: Pak Joko Santoso (Tukang Ledeng & Pipa) -->
-<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="false" data-jw-category="pipa" data-jw-distance="2.4" data-jw-name="Pak Joko Santoso" data-jw-rating="4.8" data-jw-warranty="true">
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="false" data-jw-category="pipa" data-jw-distance="2.4" data-jw-name="Pak Joko Santoso" data-jw-provider-id="2" data-jw-rating="4.8" data-jw-warranty="true">
 <div class="flex items-start gap-4">
 <div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container-low shrink-0 border border-outline-variant/30">
-<img alt="Portrait photography of Pak Joko Santoso, a middle-aged Indonesian master plumber in Makassar holding a pipe wrench, wearing a dur" class="w-full h-full object-cover" data-alt="Portrait photography of Pak Joko Santoso, a middle-aged Indonesian master plumber in Makassar holding a pipe wrench, wearing a durable tan utility vest and cap, warm and approachable expression, sharp clean neighborhood daytime backdrop." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKNtUq-1Fuf4Uhk6dSKAoaEw8d_k0TSMk8DbTtu40I8zgan6bzjHOl7qyHq52VKy_MHi7NYoz2iJv48xv2gDobB3kv8tBk7YilTryVEa6LaV8KDsa0FnveKZpwf-ZHna-Za1JV-N3PUo1DHcRYMvq-4Cyw7zjVPZBQ3X1xOphr-DNnq_cNjuBepndvaCi4ZEGqY40QJgZotAwf3MuWe5Ml3xY_3-qbOb6sV4P_azRL"/>
+<img alt="Portrait photography of Pak Joko Santoso, a middle-aged Indonesian master plumber in Bandung holding a pipe wrench, wearing a dur" class="w-full h-full object-cover" data-alt="Portrait photography of Pak Joko Santoso, a middle-aged Indonesian master plumber in Bandung holding a pipe wrench, wearing a durable tan utility vest and cap, warm and approachable expression, sharp clean neighborhood daytime backdrop." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKNtUq-1Fuf4Uhk6dSKAoaEw8d_k0TSMk8DbTtu40I8zgan6bzjHOl7qyHq52VKy_MHi7NYoz2iJv48xv2gDobB3kv8tBk7YilTryVEa6LaV8KDsa0FnveKZpwf-ZHna-Za1JV-N3PUo1DHcRYMvq-4Cyw7zjVPZBQ3X1xOphr-DNnq_cNjuBepndvaCi4ZEGqY40QJgZotAwf3MuWe5Ml3xY_3-qbOb6sV4P_azRL"/>
 <div class="absolute bottom-0 right-0 bg-emerald-500 w-3.5 h-3.5 rounded-tl-lg ring-2 ring-surface-container-lowest"></div>
 </div>
 <div>
@@ -208,7 +208,7 @@
 <div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 mb-1.5">
 <span class="font-semibold text-primary">Tukang Ledeng &amp; Pipa</span>
 <span class="">•</span>
-<span class="">Kecamatan Tamalate (2.4 km)</span>
+<span class="">Kecamatan Lengkong (2.4 km)</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-1 font-label-md text-label-md text-tertiary">
@@ -227,17 +227,17 @@
 <span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 60.000</span>
 </div>
 <div class="flex items-center gap-2">
-<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-name="Pak Joko Santoso" type="button">
+<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-provider-id="2" data-jw-name="Pak Joko Santoso" type="button">
                   Lihat Profil
                 </button>
-<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-name="Pak Joko Santoso" type="button">
+<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-provider-id="2" data-jw-name="Pak Joko Santoso" type="button">
                   Pesan Jasa
                 </button>
 </div>
 </div>
 </article>
-<!-- Card 3: Elektrik Jaya Makassar (Tukang Listrik) -->
-<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="true" data-jw-category="listrik" data-jw-distance="0.8" data-jw-name="Elektrik Jaya Makassar" data-jw-rating="5.0" data-jw-warranty="true">
+<!-- Card 3: Elektrik Jaya Bandung (Tukang Listrik) -->
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="true" data-jw-category="listrik" data-jw-distance="0.8" data-jw-name="Elektrik Jaya Bandung" data-jw-provider-id="3" data-jw-rating="5.0" data-jw-warranty="true">
 <div class="flex items-start gap-4">
 <div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container-low shrink-0 border border-outline-variant/30">
 <img alt="Portrait photography of an Indonesian certified electrical technician team leader smiling confidently in front of modern electrica" class="w-full h-full object-cover" data-alt="Portrait photography of an Indonesian certified electrical technician team leader smiling confidently in front of modern electrical circuit boxes, wearing a high-visibility polo shirt and protective safety glasses, crisp modern studio lighting aesthetic." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPOGhUd4NoZK1gZQoq1PHRtZXffVsjg_qOe1p01uNL94O2NwLV2M7xHilz-IJhvfxHJfyUFGNTuS-XTVTV1vRnShTBs-J5jwL-fr5rPrlR5T68O9XQcjnw9ql9rtQnsoGDfqPCN7o9ebywI9E5j6GOjnc9AX2KwZf5Sk3HLlyIpoCmyRt8KhLXwU30LIYE7DPkLFglD0g_nHcPJE_N7bnkemw5SOMcG5nVPagsPo3j"/>
@@ -245,7 +245,7 @@
 </div>
 <div>
 <div class="flex flex-wrap items-center gap-2 mb-1">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Elektrik Jaya Makassar</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Elektrik Jaya Bandung</h3>
 <span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-0.5">
 <span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
                     Mitra Terverifikasi
@@ -255,7 +255,7 @@
 <div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 mb-1.5">
 <span class="font-semibold text-primary">Tukang Listrik &amp; Arus Kuat</span>
 <span class="">•</span>
-<span class="">Kecamatan Rappocini (0.8 km)</span>
+<span class="">Kecamatan Sukajadi (0.8 km)</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-1 font-label-md text-label-md text-tertiary">
@@ -274,25 +274,25 @@
 <span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 85.000</span>
 </div>
 <div class="flex items-center gap-2">
-<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-name="Elektrik Jaya Makassar" type="button">
+<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-provider-id="3" data-jw-name="Elektrik Jaya Bandung" type="button">
                   Lihat Profil
                 </button>
-<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-name="Elektrik Jaya Makassar" type="button">
+<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-provider-id="3" data-jw-name="Elektrik Jaya Bandung" type="button">
                   Pesan Jasa
                 </button>
 </div>
 </div>
 </article>
-<!-- Card 4: Ahli Bangunan Daeng Rani (Renovasi & Cat) -->
-<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="false" data-jw-category="bangunan" data-jw-distance="3.1" data-jw-name="Ahli Bangunan Daeng Rani" data-jw-rating="4.8" data-jw-warranty="false">
+<!-- Card 4: Ahli Bangunan Bu Rani (Renovasi & Cat) -->
+<article class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/30 hover:border-primary/50 hover:shadow-md transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 jw-provider-card" data-jw-available="false" data-jw-category="bangunan" data-jw-distance="3.1" data-jw-name="Ahli Bangunan Bu Rani" data-jw-provider-id="4" data-jw-rating="4.8" data-jw-warranty="false">
 <div class="flex items-start gap-4">
 <div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container-low shrink-0 border border-outline-variant/30">
-<img alt="Portrait photography of Daeng Rani, a senior Indonesian construction contractor and master mason in Makassar wearing a white build" class="w-full h-full object-cover" data-alt="Portrait photography of Daeng Rani, a senior Indonesian construction contractor and master mason in Makassar wearing a white builder hardhat and casual plaid work shirt, warm proud demeanor, with a modern Indonesian house construction site softly blurred in the background." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAsPrkmd3dfcsgYGtw7afGGK-DMLPm72Il6joEso6pIM6rHJ70sA6vuXcCGryt0whN6BLQ1FRVpYeUBVsV5j3V8ZcjnY56s8oVpKIremhUJOjcM7p5c_NBf3LQfgW2ey3BBm_-iBpymbMz5dcbSMR7FGogHZD4pyuWa_84_pOCCuNnbIu3Hq4MkcH6IQrdCpX6sozXzMmXBiJhF6kxtjPvQufJmzUhx2_fFSv2eoZ_"/>
+<img alt="Portrait photography of Bu Rani, a senior Indonesian construction contractor and master mason in Bandung wearing a white build" class="w-full h-full object-cover" data-alt="Portrait photography of Bu Rani, a senior Indonesian construction contractor and master mason in Bandung wearing a white builder hardhat and casual plaid work shirt, warm proud demeanor, with a modern Indonesian house construction site softly blurred in the background." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAsPrkmd3dfcsgYGtw7afGGK-DMLPm72Il6joEso6pIM6rHJ70sA6vuXcCGryt0whN6BLQ1FRVpYeUBVsV5j3V8ZcjnY56s8oVpKIremhUJOjcM7p5c_NBf3LQfgW2ey3BBm_-iBpymbMz5dcbSMR7FGogHZD4pyuWa_84_pOCCuNnbIu3Hq4MkcH6IQrdCpX6sozXzMmXBiJhF6kxtjPvQufJmzUhx2_fFSv2eoZ_"/>
 <div class="absolute bottom-0 right-0 bg-amber-400 w-3.5 h-3.5 rounded-tl-lg ring-2 ring-surface-container-lowest" title="Sibuk - Menerima Jadwal Besok"></div>
 </div>
 <div>
 <div class="flex flex-wrap items-center gap-2 mb-1">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Ahli Bangunan Daeng Rani</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ahli Bangunan Bu Rani</h3>
 <span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-0.5">
 <span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
                     Mitra Terverifikasi
@@ -301,7 +301,7 @@
 <div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 mb-1.5">
 <span class="font-semibold text-primary">Renovasi Rumah &amp; Pengecatan</span>
 <span class="">•</span>
-<span class="">Kecamatan Ujung Pandang (3.1 km)</span>
+<span class="">Kecamatan Sukajadi (3.1 km)</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-1 font-label-md text-label-md text-tertiary">
@@ -320,10 +320,10 @@
 <span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 120.000</span>
 </div>
 <div class="flex items-center gap-2">
-<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-name="Ahli Bangunan Daeng Rani" type="button">
+<button class="px-3 py-2 rounded-xl border border-outline-variant hover:bg-surface-container-low font-label-md text-on-surface transition-colors active:scale-[0.98]" data-jw-action="profile" data-jw-provider-id="4" data-jw-name="Ahli Bangunan Bu Rani" type="button">
                   Lihat Profil
                 </button>
-<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-name="Ahli Bangunan Daeng Rani" type="button">
+<button class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md transition-all active:scale-[0.98] shadow-sm" data-jw-action="order" data-jw-provider-id="4" data-jw-name="Ahli Bangunan Bu Rani" type="button">
                   Pesan Jasa
                 </button>
 </div>
@@ -356,9 +356,9 @@
 <div>
 <h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[20px]">map</span>
-                Peta Sebaran Mitra Makassar
+                Peta Sebaran Mitra Bandung
               </h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">18 teknisi online di sekitar Panakkukang &amp; Pettarani</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Penanda contoh mitra jasa di berbagai kecamatan Bandung</p>
 </div>
 <!-- Map / List view toggler -->
 <div class="inline-flex rounded-xl bg-surface-container p-0.5 text-on-surface-variant font-label-sm">
@@ -366,189 +366,21 @@
 <button class="px-2.5 py-1 rounded-lg hover:text-primary transition-colors" data-jw-action="list" type="button">List</button>
 </div>
 </div>
-<!-- Realistic Vector Map Container Canvas -->
-<div aria-label="Ilustrasi peta mitra Makassar (data contoh)" class="relative w-full h-[520px] bg-[#dbe8f5] overflow-hidden select-none" data-location="Makassar">
-<!-- Map Graphic SVG Representation (Makassar Coastline, Pettarani, Panakkukang, Losari) -->
-<svg class="w-full h-full object-cover" fill="none" viewbox="0 0 600 680" xmlns="http://www.w3.org/2000/svg">
-<!-- Water Body (Selat Makassar on West side) -->
-<path d="M0 0 H130 C110 120 140 260 90 400 C60 480 80 580 50 680 H0 V0 Z" fill="#b9ddf5"></path>
-<text fill="#006098" font-family="Inter" font-size="12" font-weight="600" opacity="0.4" transform="rotate(-90 30 320)" x="30" y="320">Pantai Losari / Selat Makassar</text>
-<!-- Land mass base -->
-<rect fill="#edf4fa" height="680" opacity="0.6" width="490" x="110" y="0"></rect>
-<!-- Neighborhood Zones & Green Parks -->
-<!-- Lapangan Karebosi Area -->
-<rect fill="#d2ebd9" height="50" rx="8" width="60" x="180" y="140"></rect>
-<text fill="#306b43" font-family="Inter" font-size="9" font-weight="600" opacity="0.7" x="185" y="170">Karebosi</text>
-<!-- Mall Panakkukang District -->
-<rect fill="#e2edfa" height="90" rx="12" stroke="#c0d7f0" stroke-width="1.5" width="130" x="360" y="270"></rect>
-<text fill="#006098" font-family="Inter" font-size="11" font-weight="700" opacity="0.5" x="375" y="315">Kawasan Panakkukang</text>
-<!-- Tamalate District -->
-<rect fill="#e9eef7" height="80" rx="10" width="120" x="220" y="470"></rect>
-<text fill="#465e90" font-family="Inter" font-size="11" font-weight="600" opacity="0.5" x="240" y="515">Kec. Tamalate</text>
-<!-- Rappocini District -->
-<rect fill="#f0f3ff" height="70" rx="10" width="140" x="330" y="390"></rect>
-<text fill="#465e90" font-family="Inter" font-size="11" font-weight="600" opacity="0.5" x="350" y="430">Kec. Rappocini</text>
-<!-- Road Network (Primary Arterials) -->
-<!-- Jl. A.P. Pettarani (Major Vertical Backbone Highway) -->
-<path d="M310 0 V680" stroke="#ffffff" stroke-linecap="round" stroke-width="18"></path>
-<path d="M310 0 V680" stroke="#f6c244" stroke-dasharray="8 6" stroke-width="4"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="10" font-weight="700" opacity="0.6" transform="rotate(90 315 90)" x="315" y="90">Jl. Andi Pangerang Pettarani</text>
-<!-- Jl. Urip Sumoharjo (Major Horizontal East-West Arterial) -->
-<path d="M120 180 C260 180 340 180 600 220" stroke="#ffffff" stroke-linecap="round" stroke-width="16"></path>
-<path d="M120 180 C260 180 340 180 600 220" stroke="#ffb86e" stroke-width="3"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="9" font-weight="600" opacity="0.6" x="380" y="205">Jl. Urip Sumoharjo</text>
-<!-- Jl. Boulevard Panakkukang -->
-<path d="M310 320 H580" stroke="#ffffff" stroke-linecap="round" stroke-width="12"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="9" font-weight="600" opacity="0.6" x="430" y="338">Jl. Boulevard</text>
-<!-- Jl. Pengayoman -->
-<path d="M310 360 H560" stroke="#ffffff" stroke-linecap="round" stroke-width="10"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="9" font-weight="600" opacity="0.6" x="440" y="375">Jl. Pengayoman</text>
-<!-- Jl. Veteran Selatan / Utara -->
-<path d="M210 50 V680" stroke="#ffffff" stroke-width="12"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="9" font-weight="600" opacity="0.5" transform="rotate(90 215 270)" x="215" y="270">Jl. Veteran</text>
-<!-- Jl. Sultan Alauddin (Connecting to Gowa) -->
-<path d="M180 560 C280 560 380 570 600 600" stroke="#ffffff" stroke-width="14"></path>
-<text fill="#0e1c31" font-family="Inter" font-size="9" font-weight="600" opacity="0.6" x="360" y="585">Jl. Sultan Alauddin</text>
-<!-- Secondary Residential Grids -->
-<path d="M130 90 H300 M320 100 H550 M320 260 H520 M320 440 H550 M140 280 H300 M140 380 H300 M180 480 H300" opacity="0.8" stroke="#ffffff" stroke-width="5"></path>
-<path d="M260 0 V680 M380 180 V680 M480 200 V680 M540 220 V680 M160 0 V680" opacity="0.8" stroke="#ffffff" stroke-width="5"></path>
-<!-- Flyover Pettarani interchange icon landmark -->
-<circle cx="310" cy="180" fill="#afc6ff" r="14" stroke="#006098" stroke-width="2"></circle>
-<text fill="#006098" font-family="Inter" font-size="10" font-weight="bold" x="303" y="184">FO</text>
-</svg>
-<!-- Interactive Map Pins: Overlay Elements -->
-<!-- Pin: USER'S CURRENT LOCATION (Pettarani Pulse) -->
-<div class="absolute top-[280px] left-[295px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20">
-<div class="relative flex items-center justify-center">
-<span class="animate-ping absolute inline-flex h-12 w-12 rounded-full bg-primary opacity-30"></span>
-<span class="relative inline-flex rounded-full h-7 w-7 bg-primary border-4 border-surface-container-lowest shadow-lg items-center justify-center text-white">
-<span class="w-2 h-2 rounded-full bg-white"></span>
-</span>
-<!-- Location Label Tooltip -->
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-inverse-surface text-inverse-on-surface text-[11px] font-label-md px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Lokasi Anda: Jl. AP Pettarani
-                </div>
-</div>
-</div>
-<!-- Pin 1: AC PIN (Budi Teknik - Active Highlighted Pin) -->
-<div class="absolute top-[320px] left-[390px] group cursor-pointer z-30 transition-transform hover:scale-110">
-<div class="relative flex flex-col items-center">
-<div class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[10px] shadow-md flex items-center gap-1 mb-1 ring-2 ring-surface-container-lowest">
-<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
-<span class="">Budi Teknik (Online)</span>
-</div>
-<div class="w-8 h-8 rounded-full bg-tertiary border-2 border-surface-container-lowest shadow-md flex items-center justify-center text-on-tertiary">
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
-</div>
-<div class="w-1.5 h-2 bg-tertiary -mt-0.5"></div>
-</div>
-</div>
-<!-- Pin 2: Construction Pin (Navy House) -->
-<div class="absolute top-[160px] left-[220px] group cursor-pointer z-20 hover:scale-110 transition-transform">
-<div class="relative flex flex-col items-center">
-<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest shadow-md flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[16px]">home</span>
-</div>
-<div class="hidden group-hover:flex absolute -top-7 whitespace-nowrap bg-inverse-surface text-white text-[10px] px-2 py-0.5 rounded shadow">
-                  Daeng Rani (Bangunan)
-                </div>
-</div>
-</div>
-<!-- Pin 3: Electrical Pin (Bright Lightning) -->
-<div class="absolute top-[410px] left-[370px] group cursor-pointer z-20 hover:scale-110 transition-transform">
-<div class="relative flex flex-col items-center">
-<div class="w-7 h-7 rounded-full bg-amber-500 border-2 border-surface-container-lowest shadow-md flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[16px]">bolt</span>
-</div>
-<div class="hidden group-hover:flex absolute -top-7 whitespace-nowrap bg-inverse-surface text-white text-[10px] px-2 py-0.5 rounded shadow">
-                  Elektrik Jaya (Rappocini)
-                </div>
-</div>
-</div>
-<!-- Pin 4: Plumbing Pin (Blue Water Droplet) -->
-<div class="absolute top-[490px] left-[260px] group cursor-pointer z-20 hover:scale-110 transition-transform">
-<div class="relative flex flex-col items-center">
-<div class="w-7 h-7 rounded-full bg-sky-600 border-2 border-surface-container-lowest shadow-md flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[16px]">water_drop</span>
-</div>
-<div class="hidden group-hover:flex absolute -top-7 whitespace-nowrap bg-inverse-surface text-white text-[10px] px-2 py-0.5 rounded shadow">
-                  Pak Joko (Pipa Air)
-                </div>
-</div>
-</div>
-<!-- Pin 5: Another nearby AC Pin -->
-<div class="absolute top-[230px] left-[460px] group cursor-pointer z-10 hover:scale-110 transition-transform opacity-90">
-<div class="w-6 h-6 rounded-full bg-tertiary-container border border-surface-container-lowest shadow flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[14px]">ac_unit</span>
-</div>
-</div>
-<!-- Floating Map Controls (Zoom, Center) -->
-<div class="absolute top-4 right-4 flex flex-col gap-1.5 z-20">
-<button class="w-9 h-9 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-md flex items-center justify-center transition-colors active:scale-95" data-jw-action="zoom" data-zoom-direction="in" title="Perbesar" type="button">
-<span class="material-symbols-outlined text-[20px]">add</span>
-</button>
-<button class="w-9 h-9 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-md flex items-center justify-center transition-colors active:scale-95" data-jw-action="zoom" data-zoom-direction="out" title="Perkecil" type="button">
-<span class="material-symbols-outlined text-[20px]">remove</span>
-</button>
-<button class="w-9 h-9 rounded-xl bg-surface-container-lowest text-primary hover:bg-surface-container-low shadow-md flex items-center justify-center transition-colors active:scale-95 mt-1" data-jw-action="my-location" title="Pusatkan ke Lokasi Saya" type="button">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">my_location</span>
-</button>
-</div>
-<!-- Map Layer Legend (Floating Pill) -->
-<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-outline-variant/30 shadow-sm text-[11px] font-label-md flex items-center gap-3">
-<div class="flex items-center gap-1">
-<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
-<span class="">AC</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
-<span class="">Tukang</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-<span class="">Listrik</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
-<span class="">Pipa</span>
-</div>
-</div>
-<!-- Overlaid Bottom Selected Mitra Preview Card -->
-<div class="absolute bottom-4 left-4 right-4 z-30">
-<div class="bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-2xl border border-outline-variant/40 shadow-[0_8px_24px_-4px_rgba(0,32,80,0.12)]">
-<div class="flex items-center justify-between mb-2">
-<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider flex items-center gap-1">
-<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Mitra Terpilih di Peta
-                  </span>
-<span class="font-label-sm text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">
-                    ⚡ 7 Menit Estimasi Kedatangan
-                  </span>
-</div>
-<div class="flex items-center justify-between gap-3">
-<div class="flex items-center gap-3">
-<div class="w-12 h-12 rounded-xl bg-surface-container-low overflow-hidden border border-outline-variant/40 shrink-0">
-<img alt="A small detailed circular avatar of an Indonesian technician wearing an orange safety cap, cheerful and highly trustworthy appeara" class="w-full h-full object-cover" data-alt="A small detailed circular avatar of an Indonesian technician wearing an orange safety cap, cheerful and highly trustworthy appearance, soft professional light." data-fallback-url="{{ asset('assets/images/provider-placeholder.svg') }}" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnaeYM6RzLZpRO9e-p3JBrtCGonQ6w1I5YNcGn3mBwYbRFKvSdqquYpzNK5pFVq_dsYryKxKHisVmAPt4tO28TQQzBADGVdxjJ_QOBRr7MwK5Ql4M1m4ehmgPcVOKeA5E4ckcfpG-dYmINTdIOuN58MWsssXqmffE38sglnV_0yUwBxQIIp7KSeRNRLOe59DLH8TpWb2HucoVsQfjRmW99ha0FX_FmKWtJ0oLapPkG"/>
-</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Budi Teknik</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Servis AC &amp; Cuci AC • Sedang Siaga (Online)</p>
-</div>
-</div>
-<button class="px-4 py-2.5 bg-tertiary-container hover:bg-tertiary text-on-tertiary-container font-label-md rounded-xl active:scale-[0.98] transition-all whitespace-nowrap shadow-sm flex items-center gap-1.5" data-jw-action="order" type="button">
-<span class="">Pesan Sekarang</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
+<!-- Leaflet menampilkan tiles OpenStreetMap langsung, tidak lagi SVG statis. -->
+<div class="relative h-[520px] bg-[#E8F0F9]" data-jw-osm-map="desktop" role="region" aria-label="Peta OpenStreetMap mitra contoh di Bandung">
+    <div data-jw-osm-canvas class="h-full w-full" aria-label="Peta mitra wilayah Bandung"></div>
+    <div data-jw-osm-loading class="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-100 text-sm font-semibold text-slate-600">Memuat peta OpenStreetMap…</div>
+    <div class="absolute left-3 top-3 z-[400] rounded-lg bg-white/95 px-3 py-2 text-[11px] font-bold text-[#0C3065] shadow-sm">Titik Mitra · Data lokasi ilustratif Bandung</div>
+    <div class="absolute bottom-4 left-3 right-3 z-[400] flex items-center justify-between gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg">
+        <div class="min-w-0"><p class="truncate text-xs font-extrabold text-[#0C3065]" data-jw-map-selected>Ketuk penanda untuk memilih Mitra</p><p class="text-[11px] text-slate-500">Posisi mitra merupakan contoh per kecamatan</p></div>
+        <a href="{{ route('providers.show', 1) }}" data-jw-map-profile-link class="shrink-0 rounded-lg bg-[#0C3065] px-3 py-2 text-xs font-bold text-white">Lihat Profil</a>
+    </div>
 </div>
 <!-- Bottom Map Strip: Community Broadcast -->
 <div class="p-3 bg-surface-container-low border-t border-outline-variant/20 flex items-center justify-between text-on-surface-variant text-[12px]">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[18px]">cell_tower</span>
-<span class="">Kepadatan mitra di <strong>Panakkukang</strong> sangat tinggi hari ini.</span>
+<span class="">Kepadatan mitra di <strong>Coblong</strong> sangat tinggi hari ini.</span>
 </div>
 <button class="text-primary font-label-sm hover:underline" data-jw-action="radius" type="button">Perluas Radius</button>
 </div>

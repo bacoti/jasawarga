@@ -17,7 +17,7 @@
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="text-on-surface">Profil & portofolio</span>
                     </nav>
-                    <span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[11px] font-extrabold text-primary">MITRA DEMO · MAKASSAR</span>
+                    <span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[11px] font-extrabold text-primary">MITRA DEMO · BANDUNG</span>
                 </div>
             </header>
 
@@ -82,8 +82,8 @@
 
                         <section class="rounded-2xl border border-outline-variant/40 bg-white p-5 shadow-sm sm:p-6" aria-labelledby="pp-coverage-title">
                             <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">location_on</span><h3 id="pp-coverage-title" class="text-lg font-extrabold">Area jangkauan</h3></div>
-                            <p class="mb-4 mt-1 text-xs text-outline">Pilih kecamatan di Kota Makassar yang dilayani. Minimal satu kecamatan.</p>
-                            <fieldset><legend class="sr-only">Kecamatan layanan di Makassar</legend><div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                            <p class="mb-4 mt-1 text-xs text-outline">Pilih kecamatan di Kota Bandung yang dilayani. Minimal satu kecamatan.</p>
+                            <fieldset><legend class="sr-only">Kecamatan layanan di Bandung</legend><div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
                                 @foreach($areas as $area)
                                     <label class="flex cursor-pointer items-center gap-2 rounded-xl border border-outline-variant/50 px-3 py-2.5 text-xs font-semibold text-on-surface-variant transition hover:border-primary/40"><input type="checkbox" data-pp-coverage value="{{ $area }}" class="rounded border-outline-variant text-primary focus:ring-primary"><span>{{ $area }}</span></label>
                                 @endforeach
@@ -125,7 +125,7 @@
                 <p data-pp-project-error role="alert" class="hidden rounded-lg bg-error-container px-3 py-3 text-xs font-bold text-error"></p>
                 <div><label for="pp-project-title" class="mb-1.5 block text-sm font-semibold">Judul pekerjaan *</label><input id="pp-project-title" name="title" minlength="3" maxlength="90" required class="w-full rounded-xl border-outline-variant/60 text-sm focus:border-primary focus:ring-primary" placeholder="Contoh: Perbaikan AC ruang keluarga"></div>
                 <div><label for="pp-project-description" class="mb-1.5 block text-sm font-semibold">Deskripsi pekerjaan *</label><textarea id="pp-project-description" name="description" rows="4" minlength="15" maxlength="360" required class="w-full rounded-xl border-outline-variant/60 text-sm focus:border-primary focus:ring-primary" placeholder="Jelaskan masalah, tindakan perbaikan, dan hasil pekerjaan..."></textarea></div>
-                <div><label for="pp-project-area" class="mb-1.5 block text-sm font-semibold">Lokasi pekerjaan *</label><select id="pp-project-area" name="area" required class="w-full rounded-xl border-outline-variant/60 text-sm focus:border-primary focus:ring-primary">@foreach($areas as $area)<option value="{{ $area }}">{{ $area }}, Makassar</option>@endforeach</select></div>
+                <div><label for="pp-project-area" class="mb-1.5 block text-sm font-semibold">Lokasi pekerjaan *</label><select id="pp-project-area" name="area" required class="w-full rounded-xl border-outline-variant/60 text-sm focus:border-primary focus:ring-primary">@foreach($areas as $area)<option value="{{ $area }}">{{ $area }}, Bandung</option>@endforeach</select></div>
                 <div><label for="pp-project-file" class="mb-1.5 block text-sm font-semibold">Foto pekerjaan <span class="font-normal text-outline">(opsional)</span></label><input id="pp-project-file" data-pp-project-image type="file" accept="image/jpeg,image/png,image/webp" class="block w-full text-xs text-on-surface-variant file:mr-3 file:rounded-lg file:border-0 file:bg-primary-fixed file:px-3 file:py-2 file:font-semibold file:text-primary"><div data-pp-project-image-box class="mt-3 hidden overflow-hidden rounded-xl border border-outline-variant/40"><img data-pp-project-image-preview alt="Pratinjau foto pekerjaan" class="aspect-video w-full object-cover"></div><button type="button" data-pp-clear-project-image class="mt-2 text-xs font-bold text-error hover:underline">Hapus foto pekerjaan</button><p class="mt-1 text-[11px] leading-relaxed text-outline">Maks. 2 MB. Foto diperkecil untuk menghemat ruang browser. Contoh proyek bawaan tidak memiliki foto asli.</p></div>
             </div>
             <div class="flex justify-end gap-2 border-t border-outline-variant/40 p-4"><button type="button" data-pp-close-project class="rounded-xl border border-outline-variant/60 px-4 py-2.5 text-sm font-semibold">Batal</button><button type="submit" class="rounded-xl bg-primary px-5 py-2.5 text-sm font-extrabold text-white">Simpan portofolio</button></div>

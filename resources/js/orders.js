@@ -34,12 +34,12 @@ function timestampLabel(stamp) {
   if (Number.isNaN(d.getTime())) return '—';
   return new Intl.DateTimeFormat('id-ID', {
     day: 'numeric', month: 'short', year: 'numeric',
-    hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Makassar',
-  }).format(d) + ' WITA';
+    hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta',
+  }).format(d) + ' WIB';
 }
 
 function formatSchedule(order) {
-  return `${dateLabel(order.date)}, ${String(order.time || '').replace(':', '.')} WITA`;
+  return `${dateLabel(order.date)}, ${String(order.time || '').replace(':', '.')} WIB`;
 }
 
 function setStatusBadge(node, status) {
@@ -244,7 +244,7 @@ if (detailRoot) {
       provider: order.provider,
       service: order.service,
       schedule: formatSchedule(order),
-      area: `${order.area}, Makassar`,
+      area: `${order.area}, Bandung`,
       address: order.address || 'Tidak diisi',
       description: order.description || 'Tidak diisi',
       price: money.format(order.price),

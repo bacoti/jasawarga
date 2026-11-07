@@ -70,3 +70,7 @@
 .jw-admin-reduce-motion [id^="jw-admin-"] *,
 .jw-admin-reduce-motion [id^="jw-admin-"] *::before,
 .jw-admin-reduce-motion [id^="jw-admin-"] *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+
+/* Admin dan Mitra tidak dapat memesan jasa sebagai Warga. */
+html[data-jw-server-role="admin"] [data-jw-action="order"],
+html[data-jw-server-role="partner"] [data-jw-action="order"] { display: none !important; }

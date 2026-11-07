@@ -107,7 +107,7 @@ if (root) {
       const el = (selector) => fragment.querySelector(selector);
       el('[data-partner-order-service]').textContent = order.service || 'Layanan';
       el('[data-partner-order-ref]').textContent = order.reference;
-      el('[data-partner-order-date]').textContent = `${viewDate(order.date)} · ${order.time || '—'} WITA`;
+      el('[data-partner-order-date]').textContent = `${viewDate(order.date)} · ${order.time || '—'} WIB`;
       el('[data-partner-order-price]').textContent = IDR.format(order.price);
       const badge = el('[data-partner-order-status]');
       badge.textContent = ORDER_LABELS[order.status] || 'Tidak diketahui';
@@ -163,7 +163,7 @@ if (root) {
     textTo('[data-partner-dialog-ref]', order.reference);
     textTo('[data-partner-dialog-service]', order.service);
     textTo('[data-partner-dialog-status]', ORDER_LABELS[order.status] || '—');
-    textTo('[data-partner-dialog-date]', `${viewDate(order.date)}, ${order.time || '—'} WITA`);
+    textTo('[data-partner-dialog-date]', `${viewDate(order.date)}, ${order.time || '—'} WIB`);
     textTo('[data-partner-dialog-area]', order.area || '—');
     textTo('[data-partner-dialog-price]', IDR.format(order.price));
     dialog.showModal();

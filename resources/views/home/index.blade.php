@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <script type="application/json" id="jw-map-providers">@json(config('jasawarga.providers', []))</script>
     <script type="application/json" id="jw-home-categories-seed">@json(config('jasawarga.categories', []))</script>
     {{-- Kedua mode mempertahankan komposisi HTML asli. lg: adalah breakpoint 1024px. --}}
     <div class="jw-experience jw-mobile block min-h-screen bg-surface-container-low lg:hidden">

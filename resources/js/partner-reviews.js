@@ -16,9 +16,9 @@ if (root) {
   const select = selector => root.querySelector(selector);
   const dateFormatter = new Intl.DateTimeFormat('id-ID', {
     day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit',
-    timeZone: 'Asia/Makassar',
+    timeZone: 'Asia/Jakarta',
   });
-  const dateText = stamp => `${dateFormatter.format(new Date(stamp))} WITA`;
+  const dateText = stamp => `${dateFormatter.format(new Date(stamp))} WIB`;
   const list = select('[data-pr-list]');
   const template = select('#jw-pr-card-template');
   const replyDialog = select('#jw-pr-reply-dialog');
@@ -199,7 +199,7 @@ if (root) {
       { rating: 3, service: 'Pemeriksaan AC', comment: 'Pekerjaan cukup baik, tetapi waktu kedatangan melewati perkiraan. Mohon jadwal lebih diperhatikan.', details: {quality:4,punctuality:2,friendliness:4}},
     ];
     const now = Date.now();
-    const dateKey = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Makassar',year:'numeric',month:'2-digit',day:'2-digit'}).format(now).replaceAll('-', '');
+    const dateKey = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Jakarta',year:'numeric',month:'2-digit',day:'2-digit'}).format(now).replaceAll('-', '');
     const day = new Date(now + 2 * 86400000);
     const bookingDate = [day.getFullYear(), String(day.getMonth() + 1).padStart(2,'0'),String(day.getDate()).padStart(2,'0')].join('-');
     let added = 0;
@@ -210,7 +210,7 @@ if (root) {
       createOrderFromBooking({
         reference, providerId, provider: root.dataset.partnerName || 'Mitra demo', service: sample.service,
         price: 75000 + index * 15000, date: bookingDate, time: '11:00',
-        area: 'Panakkukang', address: 'Alamat demo fiktif, Panakkukang, Makassar',
+        area: 'Coblong', address: 'Alamat demo fiktif, Coblong, Bandung',
         description: 'Pekerjaan contoh untuk pengujian ulasan Mitra.',
         createdAt: now - index * 86400000,
       });

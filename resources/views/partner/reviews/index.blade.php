@@ -16,7 +16,7 @@
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="text-on-surface">Ulasan pelanggan</span>
                     </nav>
-                    <span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[11px] font-extrabold text-primary">MITRA DEMO · MAKASSAR</span>
+                    <span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[11px] font-extrabold text-primary">MITRA DEMO · BANDUNG</span>
                 </div>
             </header>
 

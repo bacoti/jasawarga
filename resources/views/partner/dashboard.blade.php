@@ -20,7 +20,7 @@
                         <span class="text-on-surface">Ringkasan operasional</span>
                     </div>
                     <div class="flex items-center gap-5">
-                        <span class="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span>Makassar</span>
+                        <span class="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span>Bandung</span>
                         <span class="h-5 w-px bg-outline-variant/60" aria-hidden="true"></span>
                         <span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[11px] font-extrabold text-primary">Mode Mitra · DEMO</span>
                     </div>

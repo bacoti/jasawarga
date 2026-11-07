@@ -4,13 +4,7 @@
 
 @section('content')
 <div id="jw-booking-success" class="min-h-screen bg-surface text-on-surface" data-home-url="{{ route('home') }}" data-categories-url="{{ route('categories.index') }}">
-    <header class="border-b border-outline-variant/40 bg-white">
-        <div class="mx-auto flex h-[70px] max-w-5xl items-center justify-between px-4 sm:px-6">
-            <a href="{{ route('home') }}" class="flex flex-col leading-none"><span class="text-xl font-extrabold text-primary">JasaWarga</span><span class="mt-1 text-[10px] font-semibold text-outline">Layanan Warga Makassar</span></a>
-            <div class="flex items-center gap-3"><a href="{{ route('account.profile') }}" data-jw-account-link class="text-xs font-bold text-primary hover:underline">Akun Warga</a><span class="rounded-full bg-primary-fixed px-3 py-1.5 text-xs font-bold text-primary">Mode simulasi</span></div>
-        </div>
-    </header>
-
+    @include('components.site-navbar')
     <main class="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-14">
         <section id="jw-success-content" class="hidden overflow-hidden rounded-2xl border border-outline-variant/40 bg-white shadow-sm" aria-labelledby="jw-success-title">
             <div class="border-b border-outline-variant/30 bg-primary-fixed/50 px-5 py-8 text-center sm:px-8">

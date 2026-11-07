@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'makassar_districts' => [
-        'Biringkanaya', 'Bontoala', 'Kepulauan Sangkarrang', 'Makassar',
-        'Mamajang', 'Manggala', 'Mariso', 'Panakkukang', 'Rappocini',
-        'Tallo', 'Tamalanrea', 'Tamalate', 'Ujung Pandang', 'Ujung Tanah', 'Wajo',
+    'bandung_districts' => [
+        'Andir', 'Antapani', 'Arcamanik', 'Astanaanyar', 'Babakan Ciparay', 'Bandung Kidul', 'Bandung Kulon', 'Bandung Wetan',
+        'Batununggal', 'Bojongloa Kaler', 'Bojongloa Kidul', 'Buahbatu', 'Cibeunying Kaler', 'Cibeunying Kidul', 'Cibiru', 'Cicendo',
+        'Cidadap', 'Cinambo', 'Coblong', 'Gedebage', 'Kiaracondong', 'Lengkong', 'Mandalajati', 'Panyileukan',
+        'Rancasari', 'Regol', 'Sukajadi', 'Sukasari', 'Sumur Bandung', 'Ujungberung',
     ],
     'limits' => [
         'addresses_per_user' => 10,

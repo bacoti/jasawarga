@@ -1,5 +1,6 @@
 // Import komponen halaman; masing-masing berjalan hanya jika kontainernya ada.
 import './home.js';
+import './home-map.js';
 import './categories.js';
 import './provider-detail.js';
 import './booking.js';

@@ -134,9 +134,9 @@ export function clearOrders() {
 export function createSampleOrders() {
   const timestamp = Date.now();
   const samples = [
-    { providerId: 1, provider: 'Budi Teknik', service: 'Cuci AC standar', serviceIndex: 0, price: 75000, area: 'Panakkukang', status: 'pending', address: 'Alamat ilustrasi di Panakkukang, Makassar', description: 'Cuci satu unit AC (contoh)', days: 2 },
-    { providerId: 2, provider: 'Pak Joko Santoso', service: 'Pemeriksaan saluran mampet', serviceIndex: 0, price: 60000, area: 'Tamalate', status: 'working', address: 'Alamat ilustrasi di Tamalate, Makassar', description: 'Periksa saluran air (contoh)', days: 3 },
-    { providerId: 3, provider: 'Elektrik Jaya Makassar', service: 'Pemeriksaan MCB', serviceIndex: 0, price: 85000, area: 'Panakkukang', status: 'completed', address: 'Alamat ilustrasi di Panakkukang, Makassar', description: 'Periksa MCB (contoh)', days: -1 },
+    { providerId: 1, provider: 'Budi Teknik', service: 'Cuci AC standar', serviceIndex: 0, price: 75000, area: 'Coblong', status: 'pending', address: 'Alamat ilustrasi di Coblong, Bandung', description: 'Cuci satu unit AC (contoh)', days: 2 },
+    { providerId: 2, provider: 'Pak Joko Santoso', service: 'Pemeriksaan saluran mampet', serviceIndex: 0, price: 60000, area: 'Lengkong', status: 'working', address: 'Alamat ilustrasi di Lengkong, Bandung', description: 'Periksa saluran air (contoh)', days: 3 },
+    { providerId: 3, provider: 'Elektrik Jaya Bandung', service: 'Pemeriksaan MCB', serviceIndex: 0, price: 85000, area: 'Coblong', status: 'completed', address: 'Alamat ilustrasi di Coblong, Bandung', description: 'Periksa MCB (contoh)', days: -1 },
   ];
   const existing = readOrders();
   const generated = samples.map((sample, index) => {

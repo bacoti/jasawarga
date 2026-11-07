@@ -117,7 +117,7 @@ if (detail) {
       description.textContent = project.description;
       const area = document.createElement('p');
       area.className = 'mt-2 text-[11px] font-semibold text-primary';
-      area.textContent = `${project.area}, Makassar`;
+      area.textContent = `${project.area}, Bandung`;
       content.append(title, description, area);
       article.append(media, content);
       cards.append(article);

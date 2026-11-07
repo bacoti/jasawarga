@@ -2,7 +2,7 @@
     <div class="border-b border-outline-variant/30 px-6 py-6">
         <a href="{{ route('partner.dashboard') }}" class="flex items-center gap-3" aria-label="Dashboard JasaWarga Mitra">
             <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white">
-                <span class="material-symbols-outlined text-[24px]">handyman</span>
+                <img src="{{ asset('assets/brand/jasawarga-icon-256.png') }}" alt="Logo JasaWarga" class="h-11 w-11 rounded-xl object-cover">
             </span>
             <span class="min-w-0">
                 <span class="block text-xl font-extrabold leading-tight tracking-tight text-primary">JasaWarga</span>
@@ -52,9 +52,9 @@
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-fixed font-extrabold text-primary">BT</span>
             <span class="min-w-0 flex-1"><span class="block truncate text-xs font-extrabold">{{ $provider['name'] }}</span><span data-ps-owner-sidebar class="block truncate text-[10px] text-outline">Mitra tersambung (Laravel)</span></span>
         </div>
-        <a href="{{ route('admin.dashboard') }}" class="mt-3 flex items-center justify-center gap-2 rounded-xl border border-outline-variant/60 px-3 py-2.5 text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low"><span class="material-symbols-outlined text-[17px]">shield_person</span>Buka Dashboard Admin (demo)</a>
+        <a href="{{ route('partner.portal') }}" class="mt-3 flex items-center justify-center gap-2 rounded-xl border border-outline-variant/60 px-3 py-2.5 text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low"><span class="material-symbols-outlined text-[17px]">storefront</span>Portal Mitra</a>
         <a href="{{ route('home') }}" class="mt-3 flex items-center justify-center gap-2 rounded-xl border border-outline-variant/60 px-3 py-2.5 text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low">
-            <span class="material-symbols-outlined text-[17px]">swap_horiz</span>Kembali ke tampilan Warga
+            <span class="material-symbols-outlined text-[17px]">swap_horiz</span>Kembali ke Beranda Publik
         </a>
     </div>
 </aside>

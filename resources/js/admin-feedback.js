@@ -10,8 +10,8 @@ if(root){
   const $=selector=>root.querySelector(selector);
   const $$=selector=>[...root.querySelectorAll(selector)];
   const el=(tag,classes='',text='')=>{const node=document.createElement(tag);node.className=classes;node.textContent=String(text);return node;};
-  const fmt=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Makassar'});
-  const time=n=>Number.isFinite(n)?`${fmt.format(new Date(n))} WITA`:'—';
+  const fmt=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Jakarta'});
+  const time=n=>Number.isFinite(n)?`${fmt.format(new Date(n))} WIB`:'—';
   const caseDialog=$('[data-case-form-dialog]'),caseForm=$('[data-case-form]');
   const actionDialog=$('[data-action-dialog]'),actionForm=$('[data-action-form]');
   let action=null,noticeTimer;

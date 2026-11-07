@@ -12,44 +12,8 @@
 <div id="jw-catalog" class="min-h-screen bg-surface text-on-surface">
     <script type="application/json" data-catalog-categories-seed>@json($categories)</script>
     {{-- Header desktop: ritme visual mengikuti Home JasaWarga. --}}
-    <header class="sticky top-0 z-40 hidden border-b border-outline-variant/40 bg-white/95 shadow-sm backdrop-blur lg:block">
-        <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-5 px-8">
-            <div class="flex items-center gap-9">
-                <a href="{{ route('home') }}" class="flex flex-col leading-none" aria-label="JasaWarga, ke beranda">
-                    <span class="text-[22px] font-extrabold tracking-tight text-primary">JasaWarga</span>
-                    <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.11em] text-outline">Layanan Warga Makassar</span>
-                </a>
-                <nav aria-label="Navigasi utama" class="flex items-center gap-7 text-sm">
-                    <a href="{{ route('home') }}" class="text-on-surface-variant transition hover:text-primary">Beranda</a>
-                    <a href="{{ route('categories.index') }}" aria-current="page" class="border-b-2 border-primary pb-1 font-bold text-primary">Kategori Jasa</a>
-                    <a href="{{ route('orders.index') }}" class="text-on-surface-variant transition hover:text-primary">Pesanan Saya</a>
-                    <a href="{{ route('account.profile') }}" data-jw-account-link class="text-on-surface-variant transition hover:text-primary">Akun Warga</a>
-                </nav>
-            </div>
-            <div class="flex items-center gap-3">
-                <span class="inline-flex items-center gap-2 rounded-full border border-outline-variant/50 bg-surface-container-low px-3 py-2 text-xs font-semibold text-on-surface-variant">
-                    <span class="material-symbols-outlined text-[18px] text-primary">location_on</span>Panakkukang, Makassar
-                </span>
-                <button type="button" data-catalog-info="Kabar Warga" class="flex h-10 w-10 items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-low" aria-label="Notifikasi"><span class="material-symbols-outlined">notifications</span></button>
-                <a href="{{ route('account.profile') }}" data-jw-account-link data-jw-account-avatar class="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-secondary-fixed text-xs font-extrabold text-secondary" aria-label="Buka akun">JW</a>
-            </div>
-        </div>
-    </header>
-
+    @include('components.site-navbar')
     {{-- Header mobile. --}}
-    <header class="sticky top-0 z-40 border-b border-outline-variant/40 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
-        <div class="mx-auto flex max-w-lg items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <a href="{{ route('home') }}" aria-label="Kembali ke beranda" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined">arrow_back</span></a>
-                <div>
-                    <h1 class="text-base font-extrabold leading-tight">Kategori Jasa</h1>
-                    <p class="text-xs text-outline">Jelajahi mitra di Makassar</p>
-                </div>
-            </div>
-            <button type="button" data-catalog-open-filter class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-outline-variant/60 bg-white text-primary" aria-label="Buka filter"><span class="material-symbols-outlined">tune</span></button>
-        </div>
-    </header>
-
     <main class="mx-auto w-full max-w-7xl px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-12 lg:pt-8">
         <nav class="mb-4 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb">
             <a href="{{ route('home') }}" class="hover:text-primary">Beranda</a><span class="material-symbols-outlined text-[15px]">chevron_right</span><span class="font-semibold text-primary">Kategori Jasa</span>
@@ -153,19 +117,14 @@
 
     <footer class="hidden border-t border-outline-variant/30 bg-white lg:block">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-8 py-7 text-xs text-outline">
-            <div><span class="font-extrabold text-primary">JasaWarga</span> · Layanan warga Makassar</div>
+            <div><span class="font-extrabold text-primary">JasaWarga</span> · Layanan warga Bandung</div>
             <div>Prototipe frontend · Informasi mitra masih berupa data contoh</div>
             <a href="{{ route('home') }}" class="font-semibold text-primary hover:underline">Kembali ke beranda</a>
         </div>
     </footer>
 
     {{-- Navigasi mobile mengikuti pola Home. --}}
-    <nav class="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-outline-variant/40 bg-white/95 px-2 pb-[max(12px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_20px_rgba(14,28,49,0.06)] backdrop-blur lg:hidden" aria-label="Navigasi bawah">
-        <a href="{{ route('home') }}" class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">home</span><span class="text-[11px]">Beranda</span></a>
-        <a href="{{ route('categories.index') }}" aria-current="page" class="flex flex-1 flex-col items-center gap-1 py-1 font-bold text-primary"><span class="material-symbols-outlined fill text-[25px]">grid_view</span><span class="text-[11px]">Jelajahi</span></a>
-        <a href="{{ route('orders.index') }}" class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">receipt_long</span><span class="text-[11px]">Pesanan</span></a>
-        <a href="{{ route('account.profile') }}" data-jw-account-link class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">person</span><span class="text-[11px]">Akun</span></a>
-    </nav>
+    @include('home.mobile.bottom-nav')
 
     {{-- Filter untuk mobile: memakai <dialog> agar fokus dan escape dikelola browser. --}}
     <dialog id="jw-catalog-filter-dialog" aria-labelledby="jw-catalog-filter-title" class="w-[min(94vw,470px)] max-h-[85dvh] rounded-2xl border border-outline-variant/40 bg-white p-0 text-on-surface shadow-2xl backdrop:bg-on-surface/50">

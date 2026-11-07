@@ -32,11 +32,11 @@ if (root) {
   };
   const formatStamp = value => Number.isFinite(value)
     ? new Intl.DateTimeFormat('id-ID', {
-      timeZone: 'Asia/Makassar',
+      timeZone: 'Asia/Jakarta',
       day: 'numeric', month: 'short', year: 'numeric',
       hour: '2-digit', minute: '2-digit',
-    }).format(new Date(value)) + ' WITA' : '—';
-  const formatSchedule = order => `${formatDay(order.date)}, ${order.time || '—'} WITA`;
+    }).format(new Date(value)) + ' WIB' : '—';
+  const formatSchedule = order => `${formatDay(order.date)}, ${order.time || '—'} WIB`;
   const statusText = status => ORDER_LABELS[status] || 'Status tidak dikenal';
   const ownOrders = () => readOrders().filter(o => Number(o.providerId) === providerId);
   const nextAction = order => {
@@ -139,7 +139,7 @@ if (root) {
       const set = (selector, text) => { card.querySelector(selector).textContent = text; };
       set('[data-mpo-card-ref]', order.reference);
       set('[data-mpo-card-service]', order.service || 'Layanan tidak diketahui');
-      set('[data-mpo-card-customer]', `${order.customerName || 'Warga demo'} · ${order.area || 'Makassar'}`);
+      set('[data-mpo-card-customer]', `${order.customerName || 'Warga demo'} · ${order.area || 'Bandung'}`);
       set('[data-mpo-card-schedule]', formatSchedule(order));
       set('[data-mpo-card-price]', currency.format(order.price));
       statusBadge(card.querySelector('[data-mpo-card-status]'), order.status);

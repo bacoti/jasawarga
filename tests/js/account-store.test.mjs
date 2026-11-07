@@ -51,7 +51,7 @@ test('register, edit, and preferences without storing a password',()=>{
 test('address CRUD and default address selection are account-scoped',()=>{
   ensureDemoAccount();
   registerAccount({name:'Warga Contoh',email:'alamat@contoh.test',phone:'081200000001'});
-  const a={label:'Rumah',recipient:'Warga Contoh',phone:'081200000001',area:'Panakkukang',street:'Jl. Simulasi No. 18',landmark:'Dekat taman'};
+  const a={label:'Rumah',recipient:'Warga Contoh',phone:'081200000001',area:'Coblong',street:'Jl. Simulasi No. 18',landmark:'Dekat taman'};
   saveAddress(a);
   assert.equal(currentAccount().addresses.length,1);
   assert.equal(currentAccount().addresses[0].isDefault,true);
@@ -72,7 +72,7 @@ test('validation rejects bad account/address and duplicate email',()=>{
   assert.throws(()=>registerAccount({name:'C',email:'test@contoh.test'}),/Nama/);
   assert.throws(()=>registerAccount({name:'Cukup Nama',email:'demo@jasawarga.test'}),/sudah digunakan/);
   demoSignIn('demo@jasawarga.test');
-  assert.throws(()=>saveAddress({label:'Rumah',recipient:'Orang',phone:'123',area:'Panakkukang',street:'Jalan No 1'}),/Nomor WA/);
+  assert.throws(()=>saveAddress({label:'Rumah',recipient:'Orang',phone:'123',area:'Coblong',street:'Jalan No 1'}),/Nomor WA/);
 });
 
 test('next redirect never allows cross-origin navigation',()=>{

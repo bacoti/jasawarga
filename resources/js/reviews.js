@@ -8,8 +8,8 @@ import {
 
 const formatDate = stamp => new Intl.DateTimeFormat('id-ID', {
   day: 'numeric', month: 'short', year: 'numeric',
-  hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Makassar',
-}).format(new Date(stamp)) + ' WITA';
+  hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta',
+}).format(new Date(stamp)) + ' WIB';
 const aspectNames = { quality: 'Kualitas', punctuality: 'Ketepatan', friendliness: 'Keramahan' };
 
 function addPhotoThumbnails(container, photos) {

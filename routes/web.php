@@ -49,6 +49,8 @@ Route::get('/mitra/{id}', function (string $id) {
     return view('providers.show', compact('provider', 'profile', 'category'));
 })->whereNumber('id')->name('providers.show');
 
+// Semua rute pembelian dan riwayat pesanan lokal hanya untuk Warga login.
+Route::middleware(['auth', 'role:citizen'])->group(function () {
 Route::get('/pemesanan/berhasil', [BookingPrototypeController::class, 'success'])
     ->name('bookings.success');
 Route::get('/pemesanan/{id}', [BookingPrototypeController::class, 'create'])
@@ -67,6 +69,8 @@ Route::get('/pesanan-saya/{reference}', function (string $reference) {
     return view('orders.show', compact('reference'));
 })->where('reference', 'JW-DEMO-[A-Z0-9-]+')->name('orders.show');
 
+
+});
 
 // Panel Admin hanya dapat diakses role admin dari sesi Laravel.
 Route::middleware(['auth', 'role:admin'])->group(function () {
@@ -170,11 +174,7 @@ Route::get('/mitra/profil', function () {
     $profile = config('jasawarga_profiles.1');
     abort_if(!is_array($profile), 404);
 
-    $areas = [
-        'Biringkanaya', 'Bontoala', 'Kepulauan Sangkarrang', 'Makassar',
-        'Mamajang', 'Manggala', 'Mariso', 'Panakkukang', 'Rappocini',
-        'Tallo', 'Tamalanrea', 'Tamalate', 'Ujung Pandang', 'Ujung Tanah', 'Wajo',
-    ];
+    $areas = config('jasawarga-profile.bandung_districts', []);
     return view('partner.profile.index', compact('provider', 'profile', 'areas'));
 })->name('partner.profile.index');
 

@@ -19,14 +19,14 @@ class ProfileController extends Controller
         $slug = $base.'-'.$user->id;
         return PartnerProfile::firstOrCreate(
             ['user_id' => $user->id],
-            ['business_name' => $user->name, 'business_phone' => $user->phone ?: '00000000', 'service_area' => 'Makassar', 'slug' => $slug, 'city' => 'Makassar', 'verification_status' => 'pending', 'service_areas' => []]
+            ['business_name' => $user->name, 'business_phone' => $user->phone ?: '00000000', 'service_area' => 'Bandung', 'slug' => $slug, 'city' => 'Bandung', 'verification_status' => 'pending', 'service_areas' => []]
         );
     }
 
     public function edit(): View
     {
         $profile = $this->profile();
-        $districts = config('jasawarga-profile.makassar_districts', []);
+        $districts = config('jasawarga-profile.bandung_districts', []);
         return view('partner.profile.edit', compact('profile', 'districts'));
     }
 
@@ -53,7 +53,7 @@ class ProfileController extends Controller
 
         $data['service_areas'] = $newAreas;
         $data['business_phone'] = $data['phone'];
-        $data['service_area'] = $newAreas[0] ?? 'Makassar';
+        $data['service_area'] = $newAreas[0] ?? 'Bandung';
         $data['slug'] = Str::slug($data['business_name']).'-'.$request->user()->id;
         if ($areaChanged && $profile->verification_status === 'approved') $data['reverification_required'] = true;
         // verification_status, verification_note, verified_at sengaja tidak pernah diisi dari request.

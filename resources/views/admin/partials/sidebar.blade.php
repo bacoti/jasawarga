@@ -2,7 +2,7 @@
     <div class="border-b border-white/10 px-6 py-6">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3" aria-label="Dashboard Admin JasaWarga">
             <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2477ac] text-white">
-                <span class="material-symbols-outlined text-[23px]">shield_person</span>
+                <img src="{{ asset('assets/brand/jasawarga-icon-256.png') }}" alt="Logo JasaWarga" class="h-full w-full rounded-xl object-contain">
             </span>
             <span><strong class="block text-[21px] font-extrabold tracking-tight">JasaWarga</strong><span class="block text-[10px] font-bold uppercase tracking-[.18em] text-blue-200">Ruang Admin · Demo</span></span>
         </a>

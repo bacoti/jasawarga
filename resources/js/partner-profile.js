@@ -137,7 +137,7 @@ if (root) {
     body.append(create('p', 'mt-1 line-clamp-2 text-xs leading-relaxed text-on-surface-variant', project.description));
     const area = create('p', 'mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-outline');
     area.append(create('span', 'material-symbols-outlined text-[15px]', 'location_on'));
-    area.append(document.createTextNode(`${project.area}, Makassar`));
+    area.append(document.createTextNode(`${project.area}, Bandung`));
     body.append(area);
     const buttons = create('div', 'mt-4 flex gap-2 border-t border-outline-variant/30 pt-3');
     const edit = create('button', 'flex-1 rounded-xl border border-outline-variant/60 px-3 py-2 text-xs font-bold text-primary transition hover:bg-surface-container-low', 'Edit');
@@ -169,7 +169,7 @@ if (root) {
     projectPhoto = project?.imageDataUrl || '';
     projectForm.elements.title.value = project?.title || '';
     projectForm.elements.description.value = project?.description || '';
-    projectForm.elements.area.value = project?.area || 'Panakkukang';
+    projectForm.elements.area.value = project?.area || 'Coblong';
     $('[data-pp-project-dialog-heading]').textContent = project ? 'Edit portofolio' : 'Tambah portofolio';
     $('[data-pp-project-image]').value = '';
     errorTo('[data-pp-project-error]', '');

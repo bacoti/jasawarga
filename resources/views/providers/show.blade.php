@@ -8,41 +8,8 @@
     <script type="application/json" data-provider-services-seed>{!! json_encode($profile['services'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
     <script type="application/json" data-provider-profile-seed>{!! json_encode(['provider' => $provider, 'profile' => $profile], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
     {{-- Header desktop; mengikuti warna dan navigasi halaman Kategori Jasa. --}}
-    <header class="sticky top-0 z-40 hidden border-b border-outline-variant/40 bg-white/95 backdrop-blur lg:block">
-        <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-8">
-            <div class="flex items-center gap-9">
-                <a href="{{ route('home') }}" class="flex flex-col leading-none" aria-label="Beranda JasaWarga">
-                    <span class="text-[22px] font-extrabold tracking-tight text-primary">JasaWarga</span>
-                    <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.11em] text-outline">Layanan Warga Makassar</span>
-                </a>
-                <nav class="flex items-center gap-7 text-sm" aria-label="Navigasi utama">
-                    <a href="{{ route('home') }}" class="text-on-surface-variant hover:text-primary">Beranda</a>
-                    <a href="{{ route('categories.index') }}" class="font-semibold text-primary">Kategori Jasa</a>
-                    <span class="text-on-surface-variant" aria-current="page">Detail Mitra</span><a href="{{ route('account.profile') }}" data-jw-account-link class="text-on-surface-variant hover:text-primary">Akun Warga</a><a href="{{ route('orders.index') }}" class="text-on-surface-variant hover:text-primary">Pesanan Saya</a>
-                </nav>
-            </div>
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-surface-container-low px-3 py-2 text-xs font-semibold text-on-surface-variant">
-                <span class="material-symbols-outlined text-[18px] text-primary">location_on</span> Makassar
-            </span>
-        </div>
-    </header>
-
+    @include('components.site-navbar')
     {{-- Header mobile. --}}
-    <header class="sticky top-0 z-40 flex items-center justify-between border-b border-outline-variant/40 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
-        <div class="flex min-w-0 items-center gap-3">
-            <a href="{{ route('categories.index', ['kategori' => $provider['category']]) }}" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-container-low" aria-label="Kembali ke Kategori Jasa">
-                <span class="material-symbols-outlined">arrow_back</span>
-            </a>
-            <div class="min-w-0">
-                <p class="truncate text-base font-extrabold">Detail Mitra</p>
-                <p class="truncate text-xs text-outline" data-public-name>{{ $provider['name'] }}</p>
-            </div>
-        </div>
-        <button type="button" data-provider-share class="flex h-10 w-10 items-center justify-center rounded-xl border border-outline-variant/60" aria-label="Bagikan profil">
-            <span class="material-symbols-outlined text-primary">share</span>
-        </button>
-    </header>
-
     <main class="mx-auto max-w-7xl px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
         <nav class="mb-5 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb">
             <a href="{{ route('home') }}" class="hover:text-primary">Beranda</a>
@@ -75,7 +42,7 @@
                 <p class="mt-1 text-sm font-semibold text-primary sm:text-base">{{ $category['name'] ?? 'Layanan Jasa' }} · <span data-public-headline>{{ $profile['headline'] }}</span></p>
                 <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-on-surface-variant sm:text-sm">
                     <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[18px] text-tertiary">star</span><strong class="text-on-surface">{{ number_format($provider['rating'], 1) }}</strong> ({{ $provider['reviews'] }} ulasan contoh)</span>
-                    <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span><span data-public-primary-area>{{ $provider['area'] }}</span>, Makassar · {{ number_format($provider['distance'], 1) }} km (contoh)</span>
+                    <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span><span data-public-primary-area>{{ $provider['area'] }}</span>, Bandung · {{ number_format($provider['distance'], 1) }} km (contoh)</span>
                     <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[18px] {{ $provider['available'] ? 'text-emerald-700' : 'text-outline' }}">schedule</span>{{ $provider['available'] ? 'Tersedia hari ini (simulasi)' : 'Jadwal terbatas (simulasi)' }}</span>
                 </div>
                 <div class="mt-5 grid grid-cols-3 divide-x divide-outline-variant/40 rounded-xl bg-surface-container-low/80 py-3 text-center">
@@ -183,7 +150,7 @@
                 <p class="mt-4 text-xs text-on-surface-variant" data-provider-selected-name>{{ $profile['services'][0]['name'] }}</p>
                 <p class="mt-1 text-3xl font-extrabold tracking-tight text-primary" data-provider-price>Rp {{ number_format($profile['services'][0]['price'], 0, ',', '.') }}</p>
                 <div class="my-5 border-t border-outline-variant/40"></div>
-                <div class="space-y-3 text-xs text-on-surface-variant"><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span> Area <span data-public-primary-area>{{ $provider['area'] }}</span>, Makassar</p><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span> {{ $provider['warranty'] ? 'Garansi contoh tersedia' : 'Garansi bergantung layanan' }}</p><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">payments</span> Tidak ada pembayaran pada prototipe</p></div>
+                <div class="space-y-3 text-xs text-on-surface-variant"><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span> Area <span data-public-primary-area>{{ $provider['area'] }}</span>, Bandung</p><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span> {{ $provider['warranty'] ? 'Garansi contoh tersedia' : 'Garansi bergantung layanan' }}</p><p class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">payments</span> Tidak ada pembayaran pada prototipe</p></div>
                 <a href="{{ route('bookings.create', $provider['id']) }}" data-provider-book class="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-bold text-white transition hover:bg-primary-container"><span class="material-symbols-outlined text-[19px]">calendar_month</span> Pesan Jasa</a>
                 <p class="mt-3 text-center text-[11px] leading-relaxed text-outline">Lanjut ke form pemesanan simulasi. Tidak membuat transaksi sungguhan.</p>
             </aside>

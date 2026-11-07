@@ -5,29 +5,8 @@
 @section('content')
 <div id="jw-orders" class="min-h-screen bg-surface text-on-surface" data-detail-url="{{ url('/pesanan-saya') }}" data-booking-base="{{ url('/pemesanan') }}" data-review-create-base="{{ url('/ulasan/tulis') }}" data-reviews-url="{{ route('reviews.index') }}">
   {{-- Desktop navigation --}}
-  <header class="sticky top-0 z-40 hidden border-b border-outline-variant/40 bg-white/95 backdrop-blur lg:block">
-    <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-8 px-8">
-      <div class="flex items-center gap-9">
-        <a href="{{ route('home') }}" class="flex flex-col leading-none"><span class="text-[22px] font-extrabold tracking-tight text-primary">JasaWarga</span><span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.11em] text-outline">Layanan Warga Makassar</span></a>
-        <nav class="flex items-center gap-7 text-sm" aria-label="Navigasi utama">
-          <a href="{{ route('home') }}" class="text-on-surface-variant hover:text-primary">Beranda</a>
-          <a href="{{ route('categories.index') }}" class="text-on-surface-variant hover:text-primary">Kategori Jasa</a>
-          <span class="border-b-2 border-primary pb-1 font-bold text-primary" aria-current="page">Pesanan Saya</span><a href="{{ route('reviews.index') }}" class="text-on-surface-variant hover:text-primary">Ulasan Saya</a><a href="{{ route('account.profile') }}" data-jw-account-link class="text-on-surface-variant hover:text-primary">Akun Warga</a>
-        </nav>
-      </div>
-      <span class="inline-flex items-center gap-2 rounded-full bg-primary-fixed px-3 py-2 text-xs font-bold text-primary"><span class="material-symbols-outlined text-[18px]">science</span> Tracking simulasi</span>
-    </div>
-  </header>
-
-  {{-- Mobile navigation --}}
-  <header class="sticky top-0 z-40 border-b border-outline-variant/40 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
-    <div class="mx-auto flex max-w-lg items-center gap-3">
-      <a href="{{ route('home') }}" aria-label="Kembali ke beranda" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-container-low"><span class="material-symbols-outlined">arrow_back</span></a>
-      <div class="min-w-0 flex-1"><h1 class="text-base font-extrabold">Pesanan Saya</h1><p class="text-xs text-outline">Riwayat & pelacakan simulasi</p></div>
-      <span class="rounded-full bg-primary-fixed px-2.5 py-1.5 text-[10px] font-extrabold text-primary">DEMO</span>
-    </div>
-  </header>
-
+  @include('components.site-navbar')
+    {{-- Mobile navigation --}}
   <main class="mx-auto max-w-7xl px-4 pb-32 pt-5 sm:px-6 lg:px-8 lg:pb-14 lg:pt-8">
     <nav class="mb-5 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb"><a href="{{ route('home') }}" class="hover:text-primary">Beranda</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-semibold text-primary">Pesanan Saya</span></nav>
 
@@ -89,11 +68,6 @@
   <dialog id="jw-orders-confirm-clear" class="w-[min(92vw,420px)] rounded-2xl border border-outline-variant/50 bg-white p-5 shadow-2xl backdrop:bg-on-surface/50"><h3 class="text-lg font-extrabold">Hapus semua riwayat?</h3><p class="mt-2 text-sm text-on-surface-variant">Semua pesanan demo di browser ini akan dihapus dan tidak dapat dipulihkan.</p><div class="mt-5 flex justify-end gap-2"><button type="button" data-orders-close-clear class="rounded-xl border border-outline-variant/70 px-4 py-2.5 text-sm font-semibold">Batal</button><button type="button" data-orders-confirm-clear class="rounded-xl bg-error px-4 py-2.5 text-sm font-bold text-white">Hapus</button></div></dialog>
   <div data-orders-toast role="status" aria-live="polite" class="pointer-events-none fixed bottom-24 left-1/2 z-[60] hidden w-[min(92vw,450px)] -translate-x-1/2 rounded-xl bg-inverse-surface px-4 py-3 text-center text-sm text-white shadow-xl lg:bottom-6"></div>
 
-  <nav class="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-outline-variant/40 bg-white/95 px-2 pb-[max(12px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_20px_rgba(14,28,49,0.06)] backdrop-blur lg:hidden" aria-label="Navigasi bawah">
-    <a href="{{ route('home') }}" class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">home</span><span class="text-[11px]">Beranda</span></a>
-    <a href="{{ route('categories.index') }}" class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">grid_view</span><span class="text-[11px]">Jelajahi</span></a>
-    <a href="{{ route('orders.index') }}" aria-current="page" class="flex flex-1 flex-col items-center gap-1 py-1 font-bold text-primary"><span class="material-symbols-outlined fill text-[25px]">receipt_long</span><span class="text-[11px]">Pesanan</span></a>
-    <a href="{{ route('account.profile') }}" data-jw-account-link class="flex flex-1 flex-col items-center gap-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[25px]">person</span><span class="text-[11px]">Akun</span></a>
-  </nav>
+  @include('home.mobile.bottom-nav')
 </div>
 @endsection

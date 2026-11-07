@@ -4,14 +4,8 @@
 
 @section('content')
 <div id="jw-order-detail" class="min-h-screen bg-surface text-on-surface" data-reference="{{ $reference }}" data-orders-url="{{ route('orders.index') }}" data-booking-base="{{ url('/pemesanan') }}" data-review-create-base="{{ url('/ulasan/tulis') }}" data-reviews-url="{{ route('reviews.index') }}">
-  <header class="sticky top-0 z-40 border-b border-outline-variant/40 bg-white/95 backdrop-blur">
-    <div class="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[76px] lg:px-8">
-      <div class="flex items-center gap-3"><a href="{{ route('orders.index') }}" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-low" aria-label="Kembali ke daftar pesanan"><span class="material-symbols-outlined">arrow_back</span></a><div><a class="text-sm font-extrabold text-primary lg:text-xl" href="{{ route('home') }}">JasaWarga</a><p class="text-xs text-outline">Detail & tracking pesanan</p></div></div>
-      <div class="flex items-center gap-3"><a href="{{ route('account.profile') }}" data-jw-account-link class="text-xs font-bold text-primary hover:underline">Akun</a><span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[10px] font-extrabold text-primary sm:text-xs">SIMULASI</span></div>
-    </div>
-  </header>
-
-  <main class="mx-auto max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
+  @include('components.site-navbar')
+    <main class="mx-auto max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
     <nav class="mb-5 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb"><a href="{{ route('home') }}">Beranda</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><a href="{{ route('orders.index') }}">Pesanan Saya</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-semibold text-primary">Detail pesanan</span></nav>
 
     <section data-order-not-found class="hidden rounded-2xl border border-outline-variant/40 bg-white px-6 py-12 text-center shadow-sm"><span class="material-symbols-outlined text-5xl text-outline">search_off</span><h1 class="mt-3 text-xl font-extrabold">Pesanan tidak ditemukan</h1><p class="mx-auto mt-2 max-w-md text-sm text-on-surface-variant">Kode tidak ada pada penyimpanan browser ini, atau data riwayat sudah dihapus. Pesanan demo tidak tersimpan di server.</p><a href="{{ route('orders.index') }}" class="mt-5 inline-flex items-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white">Kembali ke Pesanan Saya</a></section>

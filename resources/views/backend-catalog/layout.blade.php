@@ -21,7 +21,7 @@
 <div class="min-h-screen bg-[#F4F7FB] text-[#192c40] lg:flex">
     <aside class="hidden w-[250px] shrink-0 flex-col bg-[#142b42] text-white lg:sticky lg:top-0 lg:flex lg:h-screen" aria-label="Menu modul katalog PostgreSQL">
         <a href="{{ route('home') }}" class="flex items-center gap-3 border-b border-white/10 px-6 py-7">
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2477ac]"><span class="material-symbols-outlined">handyman</span></span>
+            <img src="{{ asset('assets/brand/jasawarga-icon-256.png') }}" alt="Logo JasaWarga" class="h-11 w-11 rounded-xl object-cover">
             <span><strong class="block text-xl tracking-tight">JasaWarga</strong><small class="block pt-1 text-[10px] font-bold uppercase tracking-widest text-blue-200">Katalog PostgreSQL</small></span>
         </a>
         <nav class="space-y-1 px-3 py-6" aria-label="Navigasi utama">
