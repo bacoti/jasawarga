@@ -1,0 +1,61 @@
+{
+  "project": "JasaWarga",
+  "baseline": "Source Tahap 1-7 disatukan dengan perbaikan kontrak; verifikasi PostgreSQL/Laravel masih diperlukan",
+  "schema_version": 1,
+  "phases": {
+    "1": {
+      "status": "source_available",
+      "owner": "tim autentikasi",
+      "merge_commit": "",
+      "test_evidence": ""
+    },
+    "2": {
+      "status": "source_merged_pending_tests",
+      "owner": "anggota tim Tahap 2",
+      "merge_commit": "",
+      "test_evidence": "source lint/static only; Laravel DB acceptance pending"
+    },
+    "3": {
+      "status": "source_available",
+      "owner": "tim kategori & layanan",
+      "merge_commit": "",
+      "test_evidence": ""
+    },
+    "4": {
+      "status": "source_merged_pending_tests",
+      "owner": "anggota tim Tahap 4",
+      "merge_commit": "",
+      "test_evidence": "source lint/static only; Laravel DB acceptance pending"
+    },
+    "5": {
+      "status": "source_available",
+      "owner": "tim ulasan & pengaduan",
+      "merge_commit": "",
+      "test_evidence": ""
+    },
+    "6": {
+      "status": "source_merged_pending_tests",
+      "owner": "anggota tim Tahap 6",
+      "merge_commit": "",
+      "test_evidence": "source lint/static only; Laravel DB acceptance pending"
+    },
+    "7": {
+      "status": "test_scaffold_available",
+      "owner": "integrator",
+      "merge_commit": "",
+      "test_evidence": ""
+    }
+  },
+  "release_gate": {
+    "require_phases_integrated": [
+      "2",
+      "4",
+      "6"
+    ],
+    "require_real_booking_verifier": true,
+    "require_postgresql_acceptance": true,
+    "require_browser_e2e": true,
+    "require_security_review": true,
+    "note": "Manifest membantu pelacakan, tetapi klaim integrated tidak menggantikan pengujian dan tinjauan merge."
+  }
+}

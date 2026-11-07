@@ -1,0 +1,18 @@
+JASAWARGA — TAHAP 4 VALIDATION REPORT
+
+Package: JasaWarga_Tahap4_Booking_Penjadwalan_Modul.zip
+
+PASS
+- PHP syntax check: 35 PHP files, all passed php -l.
+- ZIP integrity: unzip -t reported no errors.
+- Package structure: 37 files, including controllers, requests, services, models, migrations, Blade views, routes, command, and feature-test template.
+
+NOT RUN / REQUIRES MAIN PROJECT
+- php artisan migrate: not run; the complete Laravel project and its database connection are not available in this workspace.
+- php artisan route:list: not run for the same reason.
+- Laravel Feature Tests: 3 tests are included but were not executed; Composer vendor dependencies, Tahap 1 authentication, Tahap 2 schema, and Tahap 3 service schema must be present.
+- Browser/UI integration: not run against the real application.
+
+IMPORTANT DEPENDENCY
+- The module expects a Stage 3 services table. Default mapping: services(id, partner_profile_id, name, price_type, price, duration_minutes, is_active). Adjust config/jasawarga-booking.php if the actual schema differs.
+- Stage 4 service_id is stored as an application-level reference without a DB foreign key until the exact Stage 3 migration is available.

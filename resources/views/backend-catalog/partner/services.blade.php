@@ -1,0 +1,41 @@
+@extends('backend-catalog.layout')
+@section('title', 'Layanan PostgreSQL | Mitra JasaWarga')
+@section('backend_catalog_content')
+<div class="mb-7 flex flex-wrap items-end justify-between gap-4"><div><p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-[#006098]">Mitra terverifikasi / PostgreSQL</p><h1 class="mt-2 text-3xl font-extrabold">Layanan & tarif</h1><p class="mt-2 text-sm text-[#64798a]">{{ $profile->business_name }} · Kelola layanan milik akun ini. Harga dalam rupiah, bukan transaksi pembayaran.</p></div><a href="{{ route('db-catalog.index') }}" class="rounded-xl border border-[#ccdce9] bg-white px-5 py-3 text-xs font-bold text-[#006098]">Lihat katalog publik ↗</a></div>
+<div class="grid gap-6 xl:grid-cols-[350px_minmax(0,1fr)]">
+    <section class="h-fit rounded-2xl border border-[#dce7f0] bg-white p-5 shadow-sm"><h2 class="text-lg font-extrabold">Tambah layanan</h2><p class="mt-1 text-xs text-[#64798a]">Layanan baru akan disimpan atas nama profil Mitra yang sedang login.</p>
+        @if($categories->isEmpty())<p class="mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800">Belum ada kategori aktif di database. Hubungi Admin untuk mengaktifkan kategori.</p>@endif
+        <form method="POST" action="{{ route('partner.db-services.store') }}" class="mt-5 grid gap-4">@csrf
+            <label class="text-xs font-bold">Nama layanan<input required name="name" minlength="4" maxlength="120" value="{{ old('name') }}" placeholder="Contoh: Cuci AC split" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm"></label>
+            <label class="text-xs font-bold">Kategori<select required name="service_category_id" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm"><option value="">Pilih kategori aktif</option>@foreach($categories as $category)<option value="{{ $category->id }}" @selected((string)old('service_category_id')===(string)$category->id)>{{ $category->name }}</option>@endforeach</select></label>
+            <label class="text-xs font-bold">Deskripsi<textarea name="description" maxlength="2000" rows="3" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm">{{ old('description') }}</textarea></label>
+            <div class="grid grid-cols-2 gap-3"><label class="text-xs font-bold">Tarif mulai (Rp)<input type="number" min="5000" max="100000000" step="1" required name="base_price" value="{{ old('base_price',75000) }}" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm"></label><label class="text-xs font-bold">Estimasi durasi (menit)<input type="number" min="30" max="1440" required name="duration_minutes" value="{{ old('duration_minutes',60) }}" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm"></label></div>
+            <label class="text-xs font-bold">Status<select name="is_active" class="mt-1.5 block w-full rounded-xl border-[#cbd9e5] text-sm"><option value="1">Aktif</option><option value="0">Nonaktif</option></select></label>
+            <button @disabled($categories->isEmpty()) class="rounded-xl bg-[#006098] px-5 py-3 text-sm font-bold text-white disabled:opacity-50">Simpan layanan</button>
+        </form>
+    </section>
+    <section class="min-w-0 overflow-hidden rounded-2xl border border-[#dce7f0] bg-white shadow-sm"><div class="border-b border-[#e4ecf3] p-5"><h2 class="text-lg font-extrabold">Daftar layanan tersimpan</h2><p class="mt-1 text-xs text-[#64798a]">{{ $services->total() }} layanan database milik {{ $profile->business_name }} · maksimal 12 per halaman</p></div>
+        <div class="divide-y divide-[#e6edf3]">@forelse($services as $service)
+        @php $published = $service->is_active && $service->category?->is_active; @endphp
+        <article class="p-5"><div class="flex flex-wrap items-start justify-between gap-3"><div><p class="text-xs font-bold text-[#006098]">{{ $service->category?->name ?? 'Kategori tidak tersedia' }}</p><h3 class="mt-1 text-lg font-extrabold">{{ $service->name }}</h3><p class="mt-1 text-xs text-[#657b8c]">{{ $service->description ?: 'Belum ada deskripsi' }}</p><div class="mt-2 flex flex-wrap gap-3 text-sm font-bold"><span>Rp {{ number_format($service->base_price,0,',','.') }}</span><span class="text-[#668095]">{{ $service->duration_minutes }} menit</span></div></div><span class="rounded-full px-3 py-1 text-[11px] font-extrabold {{ $published ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900' }}">{{ $published ? 'Tampil publik' : ($service->is_active ? 'Kategori nonaktif' : 'Nonaktif') }}</span></div>
+            <div class="mt-4 flex flex-wrap items-center gap-2"><form method="POST" action="{{ route('partner.db-services.status',$service) }}">@csrf @method('PATCH')<input type="hidden" name="is_active" value="{{ $service->is_active ? 0 : 1 }}"><button @disabled(!$service->category?->is_active && !$service->is_active) class="rounded-lg border border-[#cadbe6] px-3 py-2 text-xs font-bold disabled:opacity-40">{{ $service->is_active ? 'Nonaktifkan' : 'Aktifkan' }}</button></form>
+                <details><summary class="cursor-pointer list-none rounded-lg border border-[#cadbe6] px-3 py-2 text-xs font-bold text-[#006098]">Edit layanan</summary>
+                    <form method="POST" action="{{ route('partner.db-services.update',$service) }}" class="mt-4 grid gap-3 rounded-xl bg-[#f5f8fb] p-4 sm:grid-cols-2">@csrf @method('PATCH')
+                        <label class="text-xs font-bold sm:col-span-2">Nama<input required name="name" minlength="4" maxlength="120" value="{{ $service->name }}" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm"></label>
+                        <label class="text-xs font-bold">Kategori<select required name="service_category_id" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm"><option value="">Pilih kategori</option>@foreach($categories as $category)<option value="{{ $category->id }}" @selected($service->service_category_id === $category->id)>{{ $category->name }}</option>@endforeach</select></label>
+                        <label class="text-xs font-bold">Tarif (Rp)<input type="number" required name="base_price" min="5000" max="100000000" value="{{ $service->base_price }}" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm"></label>
+                        <label class="text-xs font-bold sm:col-span-2">Deskripsi<textarea name="description" rows="2" maxlength="2000" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm">{{ $service->description }}</textarea></label>
+                        <label class="text-xs font-bold">Durasi (menit)<input type="number" required min="30" max="1440" name="duration_minutes" value="{{ $service->duration_minutes }}" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm"></label>
+                        <label class="text-xs font-bold">Status<select name="is_active" class="mt-1 block w-full rounded-lg border-[#cadbe6] text-sm"><option value="1" @selected($service->is_active)>Aktif</option><option value="0" @selected(!$service->is_active)>Nonaktif</option></select></label>
+                        <button class="rounded-lg bg-[#006098] px-4 py-2.5 text-xs font-bold text-white sm:col-span-2">Simpan perubahan</button>
+                    </form>
+                </details>
+                <form method="POST" action="{{ route('partner.db-services.destroy',$service) }}" data-catalog-confirm="Arsipkan layanan ini? Data tidak akan ditampilkan di katalog publik.">@csrf @method('DELETE')<button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-bold text-red-700">Arsipkan</button></form>
+            </div>
+        </article>
+        @empty <div class="p-10 text-center text-sm text-[#61798b]">Belum ada layanan yang tersimpan di PostgreSQL. Gunakan formulir Tambah Layanan.</div>@endforelse</div>
+        <div class="p-4">{{ $services->links() }}</div>
+    </section>
+</div>
+<p class="mt-6 rounded-xl border border-[#cde1f0] bg-[#eaf3fa] px-5 py-4 text-xs leading-relaxed text-[#315b78]">Layanan database hanya ditampilkan di katalog baru jika <strong>kategori aktif, layanan aktif, Mitra disetujui, dan akun Mitra aktif</strong>. Booking PostgreSQL Tahap 4 sekarang mengambil tarif tetap dan durasi dari layanan ini. Pesanan lokal lama tetap terpisah.</p>
+@endsection

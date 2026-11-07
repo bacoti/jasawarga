@@ -1,0 +1,22 @@
+JASAWARGA — TAHAP 6 VALIDATION REPORT
+
+Implemented:
+- Admin dashboard and date-filtered report module.
+- Partner and Warga dashboards with owner-scoped queries.
+- CSV export that excludes names, contact information, address, and booking notes.
+- Internal platform notification model/table, booking observer, inbox, read/unread actions.
+- Optional detection for Stage 5 reviews/reports tables; no duplicate review/report tables are created.
+- Feature tests prepared for role access and notification ownership.
+
+Static checks:
+- PHP syntax: run against every PHP source file in this module.
+- ZIP integrity: verified after packaging.
+
+Not run / requires main project:
+- php artisan migrate, route:list, PHPUnit Feature Tests, PostgreSQL query execution, and browser E2E.
+- Complete Laravel source, Composer dependencies, database connection, and fully integrated Stage 1–5 schemas are not available in this workspace.
+
+Important:
+- Booking completion is not proof of payment. Agreed booking value is not platform revenue.
+- WhatsApp interactions are external and not counted as bookings.
+- Email, push, WhatsApp API, and payment gateway are not implemented.

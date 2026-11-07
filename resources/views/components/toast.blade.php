@@ -1,0 +1,1 @@
+<div id="jw-toast" class="jw-toast pointer-events-none fixed bottom-24 left-1/2 z-[110] hidden w-[min(90vw,440px)] -translate-x-1/2 rounded-xl border border-outline-variant/30 bg-inverse-surface px-4 py-3 text-sm font-medium text-white shadow-xl lg:bottom-6" role="status" aria-live="polite"></div>

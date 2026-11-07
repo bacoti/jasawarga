@@ -1,0 +1,1 @@
+<div data-account-toast role="status" aria-live="polite" class="pointer-events-none fixed bottom-24 left-1/2 z-[75] hidden w-[min(92vw,430px)] -translate-x-1/2 rounded-xl bg-inverse-surface px-4 py-3 text-center text-sm font-medium text-white shadow-xl lg:bottom-6"></div>

@@ -1,0 +1,44 @@
+@extends('layouts.app')
+
+@section('title', 'Detail & Tracking Pesanan | JasaWarga')
+
+@section('content')
+<div id="jw-order-detail" class="min-h-screen bg-surface text-on-surface" data-reference="{{ $reference }}" data-orders-url="{{ route('orders.index') }}" data-booking-base="{{ url('/pemesanan') }}" data-review-create-base="{{ url('/ulasan/tulis') }}" data-reviews-url="{{ route('reviews.index') }}">
+  <header class="sticky top-0 z-40 border-b border-outline-variant/40 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[76px] lg:px-8">
+      <div class="flex items-center gap-3"><a href="{{ route('orders.index') }}" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-low" aria-label="Kembali ke daftar pesanan"><span class="material-symbols-outlined">arrow_back</span></a><div><a class="text-sm font-extrabold text-primary lg:text-xl" href="{{ route('home') }}">JasaWarga</a><p class="text-xs text-outline">Detail & tracking pesanan</p></div></div>
+      <div class="flex items-center gap-3"><a href="{{ route('account.profile') }}" data-jw-account-link class="text-xs font-bold text-primary hover:underline">Akun</a><span class="rounded-full bg-primary-fixed px-3 py-1.5 text-[10px] font-extrabold text-primary sm:text-xs">SIMULASI</span></div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
+    <nav class="mb-5 hidden items-center gap-2 text-xs text-outline lg:flex" aria-label="Breadcrumb"><a href="{{ route('home') }}">Beranda</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><a href="{{ route('orders.index') }}">Pesanan Saya</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="font-semibold text-primary">Detail pesanan</span></nav>
+
+    <section data-order-not-found class="hidden rounded-2xl border border-outline-variant/40 bg-white px-6 py-12 text-center shadow-sm"><span class="material-symbols-outlined text-5xl text-outline">search_off</span><h1 class="mt-3 text-xl font-extrabold">Pesanan tidak ditemukan</h1><p class="mx-auto mt-2 max-w-md text-sm text-on-surface-variant">Kode tidak ada pada penyimpanan browser ini, atau data riwayat sudah dihapus. Pesanan demo tidak tersimpan di server.</p><a href="{{ route('orders.index') }}" class="mt-5 inline-flex items-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white">Kembali ke Pesanan Saya</a></section>
+
+    <div data-order-content class="hidden">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-wide text-outline">Kode pemesanan simulasi</p><h1 class="mt-1 break-all font-mono text-xl font-black tracking-tight text-primary sm:text-2xl" data-order-value="reference"></h1><p class="mt-2 text-xs text-on-surface-variant">Dibuat: <span data-order-value="created"></span> · Tidak ada permintaan sungguhan ke mitra.</p></div><span data-order-status class="rounded-full px-3 py-2 text-xs font-extrabold"></span></div>
+
+      <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_330px]">
+        <div class="space-y-5">
+          <section class="rounded-2xl border border-outline-variant/40 bg-white p-5 shadow-sm sm:p-6" aria-labelledby="jw-track-title">
+            <div class="flex flex-wrap items-start justify-between gap-3"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">conversion_path</span><h2 id="jw-track-title" class="text-lg font-extrabold">Tracking status pesanan</h2></div><p class="mt-1 text-xs leading-relaxed text-on-surface-variant">Status diperbarui melalui panel Mitra dalam browser yang sama. Ini bukan pelacakan GPS maupun layanan real-time.</p></div><span class="rounded-full bg-surface-container-low px-3 py-1.5 text-[11px] font-bold text-primary" data-order-progress></span></div>
+            <ol class="mt-6 space-y-1" data-order-timeline aria-label="Tahapan pesanan"></ol>
+            <div class="mt-5 hidden rounded-xl border border-error/30 bg-error-container p-3 text-xs text-on-error-container" data-order-cancelled-note>Pesanan simulasi ini telah dibatalkan. Tahapan selanjutnya tidak dapat dijalankan.</div>
+          </section>
+
+          <section class="rounded-2xl border border-outline-variant/40 bg-white p-5 shadow-sm sm:p-6" aria-labelledby="jw-order-info-title"><h2 id="jw-order-info-title" class="text-lg font-extrabold">Informasi pemesanan</h2><dl class="mt-5 grid grid-cols-[110px_minmax(0,1fr)] gap-x-3 gap-y-3 text-sm sm:grid-cols-[170px_minmax(0,1fr)]"><dt class="text-on-surface-variant">Mitra</dt><dd class="break-words font-bold" data-order-value="provider"></dd><dt class="text-on-surface-variant">Layanan</dt><dd class="break-words" data-order-value="service"></dd><dt class="text-on-surface-variant">Jadwal</dt><dd data-order-value="schedule"></dd><dt class="text-on-surface-variant">Area layanan</dt><dd data-order-value="area"></dd><dt class="text-on-surface-variant">Alamat contoh</dt><dd class="break-words" data-order-value="address"></dd><dt class="text-on-surface-variant">Deskripsi pekerjaan</dt><dd class="whitespace-pre-wrap break-words" data-order-value="description"></dd></dl></section>
+        </div>
+
+        <aside class="space-y-5 lg:sticky lg:top-[95px]" aria-label="Ringkasan dan aksi pesanan">
+          <section class="rounded-2xl border border-outline-variant/40 bg-white p-5 shadow-sm"><h2 class="text-base font-extrabold">Ringkasan biaya</h2><p class="mt-1 text-xs text-outline">Tarif ilustratif, bukan tagihan</p><div class="mt-5 flex justify-between gap-3 text-sm"><span>Biaya layanan</span><strong data-order-value="price"></strong></div><div class="mt-3 flex justify-between gap-3 text-sm"><span>Biaya platform (demo)</span><strong>Rp0</strong></div><div class="mt-4 flex items-end justify-between gap-2 border-t border-outline-variant/30 pt-4"><strong class="text-sm">Total estimasi</strong><strong class="text-xl font-extrabold text-primary" data-order-value="total"></strong></div><p class="mt-3 text-xs leading-relaxed text-outline">Belum termasuk biaya material atau pekerjaan tambahan.</p></section>
+          <section class="rounded-2xl border border-outline-variant/40 bg-white p-5 shadow-sm"><h2 class="text-base font-extrabold">Tindakan pesanan</h2><div class="mt-4 space-y-2"><button data-order-cancel type="button" class="hidden w-full rounded-xl border border-error/40 bg-white px-4 py-3 text-sm font-bold text-error hover:bg-error-container">Batalkan pesanan demo</button><a data-order-review href="{{ route('reviews.create', $reference) }}" class="hidden w-full rounded-xl border border-outline-variant/70 px-4 py-3 text-center text-sm font-bold hover:bg-surface-container-low">Beri rating & ulasan</a><a data-order-repeat href="{{ route('categories.index') }}" class="flex w-full items-center justify-center gap-2 rounded-xl border border-outline-variant/70 px-4 py-3 text-sm font-bold hover:bg-surface-container-low"><span class="material-symbols-outlined text-[18px]">replay</span>Pesan lagi</a><a href="{{ route('orders.index') }}" class="block py-2 text-center text-xs font-semibold text-primary hover:underline">Kembali ke daftar pesanan</a></div><p class="mt-3 text-xs leading-relaxed text-outline">Untuk mengubah status pekerjaan, buka panel Mitra. Sebagai Warga, Anda hanya dapat membatalkan pesanan yang masih menunggu.</p><div data-order-alert role="alert" class="mt-3 hidden rounded-xl bg-error-container p-3 text-xs text-on-error-container"></div></section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="jw-order-cancel-dialog" class="w-[min(92vw,420px)] rounded-2xl border border-outline-variant/50 bg-white p-5 shadow-2xl backdrop:bg-on-surface/50"><div class="flex items-center gap-2 text-error"><span class="material-symbols-outlined">warning</span><h3 class="text-lg font-extrabold">Batalkan pesanan?</h3></div><p class="mt-2 text-sm leading-relaxed text-on-surface-variant">Pesanan simulasi yang masih menunggu konfirmasi akan diubah menjadi Dibatalkan dan tidak dapat dilanjutkan.</p><div class="mt-5 flex justify-end gap-2"><button data-order-keep type="button" class="rounded-xl border border-outline-variant/70 px-4 py-2.5 text-sm font-semibold">Kembali</button><button data-order-confirm-cancel type="button" class="rounded-xl bg-error px-4 py-2.5 text-sm font-bold text-white">Ya, batalkan</button></div></dialog>
+  <div data-order-toast role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 left-1/2 z-[60] hidden w-[min(92vw,420px)] -translate-x-1/2 rounded-xl bg-inverse-surface px-4 py-3 text-center text-sm text-white shadow-xl"></div>
+</div>
+@endsection

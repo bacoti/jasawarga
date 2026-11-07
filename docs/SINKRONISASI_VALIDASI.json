@@ -1,0 +1,47 @@
+{
+  "project": "JasaWarga Laravel Tahap 1-7 merged",
+  "assembled_from": "Stage 1+3+5+7 baseline and user-supplied Stage 2,4,6 modules",
+  "source_archives": {
+    "2": {
+      "filename": "JasaWarga_Tahap2_Backend_Profil_Akun_Modul.zip",
+      "sha256": "93eb7208558a40ed4107ddf83755ade5272f0c2de27be79385d13472945805af",
+      "size": 397964
+    },
+    "4": {
+      "filename": "JasaWarga_Tahap4_Booking_Penjadwalan_Modul.zip",
+      "sha256": "66f3574ed14abf239b554f14803f4750351f9a38e3e5e0e8d4b343a2a90045ca",
+      "size": 38890
+    },
+    "6": {
+      "filename": "JasaWarga_Tahap6_Dashboard_Analitik_Notifikasi_Modul.zip",
+      "sha256": "f21d5a3de632ec72141add46da5eb15dd65682b93b38dc16b62e1951af1005ad",
+      "size": 29720
+    }
+  },
+  "source_php_files_linted": 266,
+  "source_php_lint_errors": [],
+  "javascript_tests": {
+    "tests": 97,
+    "pass": 97,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "javascript_exit_code": 0,
+  "static_merge_contract_exit_code": 0,
+  "static_merge_contract_summary": "Summary: 29/29 passed",
+  "stage7_baseline_audit": {
+    "PASS": 27,
+    "WARN": 7,
+    "FAIL": 0
+  },
+  "artisan_migrate": "NOT EXECUTED: Composer dependencies and PostgreSQL driver/server unavailable here",
+  "laravel_feature_tests": "NOT EXECUTED: vendor dependencies unavailable here",
+  "browser_end_to_end": "NOT EXECUTED",
+  "release_ready": false,
+  "notes": [
+    "Stage 3 provides fixed pricing only; estimated pricing not active in merged booking adapter",
+    "localStorage demo data not migrated to DB",
+    "complaint booking references not automatically ownership-verified"
+  ]
+}

@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class PartnerProfile extends Model
+{
+    protected $fillable = [
+        'user_id', 'business_name', 'slug', 'category_name', 'specialization', 'description',
+        'experience_years', 'phone', 'whatsapp', 'city', 'address_summary', 'service_areas',
+        'profile_photo_path', 'cover_photo_path', 'reverification_required',
+    ];
+
+    protected function casts(): array
+    {
+        return ['service_areas' => 'array', 'verified_at' => 'datetime', 'reverification_required' => 'boolean'];
+    }
+
+    public function user(): BelongsTo { return $this->belongsTo(User::class); }
+    public function portfolios(): HasMany { return $this->hasMany(PartnerPortfolio::class)->orderBy('sort_order')->orderByDesc('created_at'); }
+
+    public function isPubliclyVisible(): bool
+    {
+        return $this->verification_status === 'approved' && ! $this->reverification_required;
+    }
+}

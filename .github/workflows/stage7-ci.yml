@@ -1,0 +1,73 @@
+name: JasaWarga Stage 7 Quality Gates
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sqlite-and-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, fileinfo, pdo_sqlite, pdo_pgsql, gd
+          tools: composer:v2
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Resolve Composer packages (commit composer.lock before release)
+        run: composer install --no-interaction --prefer-dist --no-progress
+      - name: Baseline preflight
+        run: php scripts/stage7_audit.php --mode=baseline
+      - name: JavaScript regression tests
+        run: node --test tests/js/*.test.mjs
+      - name: Laravel feature tests (SQLite in-memory)
+        run: php artisan test
+      - name: Compile frontend assets
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+  postgres-acceptance:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: jasawarga_ci
+          POSTGRES_USER: jasawarga_ci
+          POSTGRES_PASSWORD: temporary_ci_only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U jasawarga_ci -d jasawarga_ci"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      APP_ENV: testing
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      DB_CONNECTION: pgsql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 5432
+      DB_DATABASE: jasawarga_ci
+      DB_USERNAME: jasawarga_ci
+      DB_PASSWORD: temporary_ci_only
+      CACHE_STORE: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, fileinfo, pdo_sqlite, pdo_pgsql, gd
+          tools: composer:v2
+          coverage: none
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+      - name: PostgreSQL integration acceptance
+        run: php artisan test

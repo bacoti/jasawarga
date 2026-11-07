@@ -1,0 +1,632 @@
+[
+  {
+    "stage": "stage2",
+    "file": "INSTALL-ROUTES-SNIPPET.txt",
+    "action": "added",
+    "at": "docs/original_modules/stage2/INSTALL-ROUTES-SNIPPET.txt"
+  },
+  {
+    "stage": "stage2",
+    "file": "README.md",
+    "action": "added",
+    "at": "docs/original_modules/stage2/README.md"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Account/AddressController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Account/AddressController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Account/ProfileController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Account/ProfileController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Account/SettingsController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Account/SettingsController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Partner/PortfolioController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Partner/PortfolioController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Partner/ProfileController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Partner/ProfileController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Controllers/Public/PartnerProfileController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Public/PartnerProfileController.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Middleware/EnsureAccountRole.php",
+    "action": "added",
+    "at": "app/Http/Middleware/EnsureAccountRole.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Account/StoreAddressRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Account/StoreAddressRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Account/UpdateAccountRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Account/UpdateAccountRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Account/UpdatePasswordRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Account/UpdatePasswordRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Account/UpdateUserPreferencesRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Account/UpdateUserPreferencesRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Account/UpdateUserProfileRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Account/UpdateUserProfileRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Partner/StorePortfolioRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Partner/StorePortfolioRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Partner/UpdatePartnerProfileRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Partner/UpdatePartnerProfileRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Http/Requests/Partner/UpdatePortfolioRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Partner/UpdatePortfolioRequest.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Models/PartnerPortfolio.php",
+    "action": "added",
+    "at": "app/Models/PartnerPortfolio.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Models/PartnerProfile.php",
+    "action": "added",
+    "at": "docs/original_modules/stage2/PartnerProfile_ORIGINAL.php.txt"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Models/UserAddress.php",
+    "action": "added",
+    "at": "app/Models/UserAddress.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Models/UserPreference.php",
+    "action": "added",
+    "at": "app/Models/UserPreference.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "app/Models/UserProfile.php",
+    "action": "added",
+    "at": "app/Models/UserProfile.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "config/jasawarga-profile.php",
+    "action": "added",
+    "at": "config/jasawarga-profile.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000001_add_role_to_users_table.php",
+    "action": "added",
+    "at": "docs/original_modules/stage2/2026_11_07_000001_add_role_to_users_table.php.txt"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000002_create_user_profiles_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_010002_create_user_profiles_table.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000003_create_user_addresses_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_010003_create_user_addresses_table.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000004_create_partner_profiles_table.php",
+    "action": "added",
+    "at": "docs/original_modules/stage2/2026_11_07_000004_create_partner_profiles_table.php.txt"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000005_create_partner_portfolios_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_010005_create_partner_portfolios_table.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "database/migrations/2026_11_07_000006_create_user_preferences_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_010006_create_user_preferences_table.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "public/images/jasawarga-logo.png",
+    "action": "added",
+    "at": "public/images/jasawarga-logo.png"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/account/addresses/form.blade.php",
+    "action": "added",
+    "at": "resources/views/account/addresses/form.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/account/addresses/index.blade.php",
+    "action": "added",
+    "at": "resources/views/account/addresses/index.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/account/profile/edit.blade.php",
+    "action": "added",
+    "at": "resources/views/account/profile/edit.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/account/profile/show.blade.php",
+    "action": "added",
+    "at": "resources/views/account/profile/show.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/account/settings/index.blade.php",
+    "action": "added",
+    "at": "resources/views/account/settings/index.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/layouts/profile-stage2.blade.php",
+    "action": "added",
+    "at": "resources/views/layouts/profile-stage2.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/partner/portfolio/form.blade.php",
+    "action": "added",
+    "at": "resources/views/partner/portfolio/form.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/partner/portfolio/index.blade.php",
+    "action": "added",
+    "at": "resources/views/partner/portfolio/index.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/partner/profile/edit.blade.php",
+    "action": "added",
+    "at": "resources/views/partner/profile/edit.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "resources/views/public/partners/show.blade.php",
+    "action": "added",
+    "at": "resources/views/public/partners/show.blade.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "routes/profile-stage2.php",
+    "action": "added",
+    "at": "routes/profile-stage2.php"
+  },
+  {
+    "stage": "stage2",
+    "file": "tests/Feature/ProfileStageTwoTest.php",
+    "action": "added",
+    "at": "tests/Feature/ProfileStageTwoTest.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "INSTALL-ROUTES-SNIPPET.txt",
+    "action": "added",
+    "at": "docs/original_modules/stage4/INSTALL-ROUTES-SNIPPET.txt"
+  },
+  {
+    "stage": "stage4",
+    "file": "README.md",
+    "action": "added",
+    "at": "docs/original_modules/stage4/README.md"
+  },
+  {
+    "stage": "stage4",
+    "file": "VALIDATION-REPORT.txt",
+    "action": "added",
+    "at": "docs/original_modules/stage4/VALIDATION-REPORT.txt"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Console/Commands/ExpirePendingBookings.php",
+    "action": "added",
+    "at": "app/Console/Commands/ExpirePendingBookings.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Controllers/Booking/AdminBookingController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Booking/AdminBookingController.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Controllers/Booking/BookingAvailabilityController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Booking/BookingAvailabilityController.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Controllers/Booking/PartnerBookingController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Booking/PartnerBookingController.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Controllers/Booking/PartnerScheduleController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Booking/PartnerScheduleController.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Controllers/Booking/WargaBookingController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Booking/WargaBookingController.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Requests/Booking/PartnerWorkingHoursRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Booking/PartnerWorkingHoursRequest.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Requests/Booking/StoreBookingRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Booking/StoreBookingRequest.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Requests/Booking/StoreScheduleBlockRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Booking/StoreScheduleBlockRequest.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Http/Requests/Booking/SubmitBookingOfferRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Booking/SubmitBookingOfferRequest.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Models/Booking.php",
+    "action": "added",
+    "at": "app/Models/Booking.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Models/BookingOffer.php",
+    "action": "added",
+    "at": "app/Models/BookingOffer.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Models/BookingStatusHistory.php",
+    "action": "added",
+    "at": "app/Models/BookingStatusHistory.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Models/PartnerScheduleBlock.php",
+    "action": "added",
+    "at": "app/Models/PartnerScheduleBlock.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Models/PartnerWorkingHour.php",
+    "action": "added",
+    "at": "app/Models/PartnerWorkingHour.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Services/Booking/BookingAvailabilityService.php",
+    "action": "added",
+    "at": "app/Services/Booking/BookingAvailabilityService.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Services/Booking/BookingWorkflowService.php",
+    "action": "added",
+    "at": "app/Services/Booking/BookingWorkflowService.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "app/Services/Booking/ServiceCatalog.php",
+    "action": "added",
+    "at": "app/Services/Booking/ServiceCatalog.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "config/jasawarga-booking.php",
+    "action": "added",
+    "at": "config/jasawarga-booking.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "database/migrations/2026_11_07_000007_create_partner_working_hours_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_040001_create_partner_working_hours_table.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "database/migrations/2026_11_07_000008_create_partner_schedule_blocks_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_040002_create_partner_schedule_blocks_table.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "database/migrations/2026_11_07_000009_create_bookings_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_040003_create_bookings_table.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "database/migrations/2026_11_07_000010_create_booking_offers_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_040004_create_booking_offers_table.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "database/migrations/2026_11_07_000011_create_booking_status_histories_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_040005_create_booking_status_histories_table.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/admin/index.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/admin/index.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/admin/show.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/admin/show.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/partner/index.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/partner/index.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/partner/schedule.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/partner/schedule.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/partner/show.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/partner/show.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/warga/create.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/warga/create.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/warga/index.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/warga/index.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "resources/views/booking/warga/show.blade.php",
+    "action": "added",
+    "at": "resources/views/booking/warga/show.blade.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "routes/booking-stage4.php",
+    "action": "added",
+    "at": "routes/booking-stage4.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "routes/console-stage4.php",
+    "action": "added",
+    "at": "routes/console-stage4.php"
+  },
+  {
+    "stage": "stage4",
+    "file": "tests/Feature/BookingStageFourTest.php",
+    "action": "added",
+    "at": "tests/Feature/BookingStageFourTest.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "INSTALL-ROUTES-SNIPPET.txt",
+    "action": "added",
+    "at": "docs/original_modules/stage6/INSTALL-ROUTES-SNIPPET.txt"
+  },
+  {
+    "stage": "stage6",
+    "file": "README.md",
+    "action": "added",
+    "at": "docs/original_modules/stage6/README.md"
+  },
+  {
+    "stage": "stage6",
+    "file": "VALIDATION-REPORT.txt",
+    "action": "added",
+    "at": "docs/original_modules/stage6/VALIDATION-REPORT.txt"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Controllers/Analytics/AdminDashboardController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Analytics/AdminDashboardController.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Controllers/Analytics/AdminReportController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Analytics/AdminReportController.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Controllers/Analytics/PartnerDashboardController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Analytics/PartnerDashboardController.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Controllers/Analytics/WargaDashboardController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Analytics/WargaDashboardController.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Controllers/Notifications/NotificationController.php",
+    "action": "added",
+    "at": "app/Http/Controllers/Notifications/NotificationController.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Http/Requests/Analytics/ReportFilterRequest.php",
+    "action": "added",
+    "at": "app/Http/Requests/Analytics/ReportFilterRequest.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Models/PlatformNotification.php",
+    "action": "added",
+    "at": "app/Models/PlatformNotification.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Observers/BookingObserver.php",
+    "action": "added",
+    "at": "app/Observers/BookingObserver.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Providers/JasaWargaStageSixServiceProvider.php",
+    "action": "added",
+    "at": "app/Providers/JasaWargaStageSixServiceProvider.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Services/Analytics/AdminAnalyticsService.php",
+    "action": "added",
+    "at": "app/Services/Analytics/AdminAnalyticsService.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "app/Services/Notifications/PlatformNotificationService.php",
+    "action": "added",
+    "at": "app/Services/Notifications/PlatformNotificationService.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "config/jasawarga-analytics.php",
+    "action": "added",
+    "at": "config/jasawarga-analytics.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "database/migrations/2026_11_07_000012_create_platform_notifications_table.php",
+    "action": "added",
+    "at": "database/migrations/2026_11_07_060001_create_platform_notifications_table.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/analytics/admin/dashboard.blade.php",
+    "action": "added",
+    "at": "resources/views/analytics/admin/dashboard.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/analytics/admin/reports.blade.php",
+    "action": "added",
+    "at": "resources/views/analytics/admin/reports.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/analytics/partner/dashboard.blade.php",
+    "action": "added",
+    "at": "resources/views/analytics/partner/dashboard.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/analytics/warga/dashboard.blade.php",
+    "action": "added",
+    "at": "resources/views/analytics/warga/dashboard.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/components/notification-bell.blade.php",
+    "action": "added",
+    "at": "resources/views/components/notification-bell.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/layouts/analytics-stage6.blade.php",
+    "action": "added",
+    "at": "resources/views/layouts/analytics-stage6.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "resources/views/notifications/index.blade.php",
+    "action": "added",
+    "at": "resources/views/notifications/index.blade.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "routes/analytics-stage6.php",
+    "action": "added",
+    "at": "routes/analytics-stage6.php"
+  },
+  {
+    "stage": "stage6",
+    "file": "tests/Feature/AnalyticsStageSixTest.php",
+    "action": "added",
+    "at": "tests/Feature/AnalyticsStageSixTest.php"
+  }
+]

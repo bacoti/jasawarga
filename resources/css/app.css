@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Original JasaWarga design's custom rules, retained below. */
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f0f3ff;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bfc7d3;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #6f7882;
+    }
+  
+
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars for clean mobile UX */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @keyframes ping-subtle {
+      75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+    .animate-ping-subtle {
+      animation: ping-subtle 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+  
+
+/* Additional behavior-only classes for the frontend-only prototype. */
+.jw-is-hidden { display: none !important; }
+.jw-selected-category { outline: 2px solid #006098; outline-offset: 2px; }
+.jw-active-pill { box-shadow: 0 0 0 2px #00609844; }
+.jw-toast:not(.hidden) { animation: jw-toast-in .17s ease-out; }
+.jw-dialog { max-height: min(85dvh, 730px); overflow-y: auto; }
+.jw-dialog::backdrop { background: rgb(14 28 49 / 52%); backdrop-filter: blur(3px); }
+@keyframes jw-toast-in { from {opacity:0; transform:translate(-50%, 10px)} to {opacity:1; transform:translate(-50%,0)} }
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce, .animate-ping, .animate-ping-subtle { animation: none !important; }
+  *, *::before, *::after {scroll-behavior:auto !important;}
+}
+
+/* Preferensi aksesibilitas Admin: mengurangi efek visual non-esensial. */
+.jw-admin-reduce-motion [id^="jw-admin-"] *,
+.jw-admin-reduce-motion [id^="jw-admin-"] *::before,
+.jw-admin-reduce-motion [id^="jw-admin-"] *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }

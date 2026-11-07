@@ -1,0 +1,28 @@
+JASAWARGA — TAHAP 6: DASHBOARD, ANALITIK & NOTIFIKASI
+
+1) Ekstrak seluruh isi ZIP ke root project Laravel (backup dahulu).
+
+2) Tambahkan di bagian bawah routes/web.php:
+   require __DIR__.'/analytics-stage6.php';
+
+3) Daftarkan provider di bootstrap/providers.php (Laravel 11/12/13):
+   App\Providers\JasaWargaStageSixServiceProvider::class,
+   Tambahkan sebagai item baru di array, jangan menghapus provider yang sudah ada.
+
+4) Jalankan:
+   php artisan optimize:clear
+   php artisan migrate
+   php artisan route:list --name=analytics
+   php artisan route:list --name=notifications
+   php artisan test --filter=AnalyticsStageSixTest
+
+URL:
+- /admin/overview
+- /admin/laporan
+- /mitra/workspace/overview
+- /akun/dashboard
+- /notifikasi
+
+Prasyarat: autentikasi session Tahap 1; PartnerProfile, EnsureAccountRole Tahap 2;
+Booking, BookingOffer, BookingStatusHistory Tahap 4; tabel services Tahap 3.
+Tabel reviews dan reports dari Tahap 5 bersifat opsional dan hanya dihitung jika tersedia.

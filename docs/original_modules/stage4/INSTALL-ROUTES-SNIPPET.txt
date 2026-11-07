@@ -1,0 +1,18 @@
+Tambahkan pada routes/web.php:
+
+require __DIR__.'/booking-stage4.php';
+
+Tambahkan pada routes/console.php:
+
+require __DIR__.'/console-stage4.php';
+
+Setelah file disalin, jalankan:
+
+php artisan optimize:clear
+php artisan migrate
+php artisan route:list --name=bookings
+php artisan test --filter=BookingStageFourTest
+
+Untuk menguji job kedaluwarsa:
+
+php artisan jasawarga:expire-bookings

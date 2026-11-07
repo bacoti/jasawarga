@@ -1,0 +1,6 @@
+Tambahkan satu kali pada bagian bawah routes/web.php:
+
+require __DIR__.'/profile-stage2.php';
+
+Jangan mengganti seluruh routes/web.php yang sudah ada.
+Pastikan route login/logout dan session authentication dari Tahap 1 sudah tersedia.
